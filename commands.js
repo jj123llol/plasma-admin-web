@@ -132,6 +132,29 @@ var Work_At_A_Pizza_Place_Commands = [
     "banlands (plr)"
 ]
 
+var Find_The_Commands = [
+    "nobaseplate",
+    "bald (plr)",
+    "kick (plr)",
+    "noclothes (plr)",
+    "remhumanoid (plr)",
+    "nohrp (plr)",
+    "kill (plr)",
+    "nolimbs (plr)",
+    "half (plr)",
+    "shutdown",
+    "btools",
+    "ban (plr) / unban (plr)",
+    "lockserver / unlockserver",
+    "stun (plr) / unstun (plr)",
+    "jump (plr)",
+    "loopjump (plr) / unloopjump (plr)",
+    "unanchorall",
+    "getpasses",
+    "bodyswap (plr)",
+    "kill2 (plr)"
+]
+
 for (let i = 0; i < Life_In_Paradise_Commands.length; i++) {
     var command = Life_In_Paradise_Commands[i]
     var el = document.createElement('p');
@@ -190,4 +213,21 @@ for (let i = 0; i < Work_At_A_Pizza_Place_Commands.length; i++) {
     el.style.marginbottom = "8px";
     el.style.paddingtop ="10px";
     document.getElementById("Work At").appendChild(el);
+}
+
+for (let i = 0; i < Find_The_Commands.length; i++) {
+    var command = Find_The_Commands[i]
+    var el = document.createElement('p');
+    el.innerHTML = command;
+    el.style.margin = "5px";
+    el.style.marginbottom = "8px";
+    el.style.paddingtop ="10px";
+    document.getElementById("Find The Flags").appendChild(el);
+    
+    var el = document.createElement('p');
+    el.innerHTML = command;
+    el.style.margin = "5px";
+    el.style.marginbottom = "8px";
+    el.style.paddingtop ="10px";
+    document.getElementById("Find The FB").appendChild(el);
 }
