@@ -155,6 +155,36 @@ var Find_The_Commands = [
     "kill2 (plr)"
 ]
 
+var ZBM_Commands = [
+    "pickupmoney",
+    "getsamples",
+    "sellsamples",
+    "killboss",
+    "kill (plr)",
+    "loopkill (plr) / unloopkill (plr)",
+    "killeverything",
+    "killzombies"
+]
+
+var Live_Rich_Commands = [
+    "kill (plr)",
+    "nobaseplate",
+    "kick (plr)",
+    "shutdown",
+    "btools",
+    "drophats (num)",
+    "clone (plr)",
+    "korblox (plr)",
+    "cripple (plr)",
+    "nohum (plr)",
+    "nolegs (plr)",
+    "noarms (plr)",
+    "nolimbs (plr)",
+    "bald (plr)",
+    "noclothes (plr)",
+    "gear (id)"
+]
+
 for (let i = 0; i < Life_In_Paradise_Commands.length; i++) {
     var command = Life_In_Paradise_Commands[i]
     var el = document.createElement('p');
@@ -224,10 +254,30 @@ for (let i = 0; i < Find_The_Commands.length; i++) {
     el.style.paddingtop ="10px";
     document.getElementById("Find The Flags").appendChild(el);
     
+    var el2 = document.createElement('p');
+    el2.innerHTML = command;
+    el2.style.margin = "5px";
+    el2.style.marginbottom = "8px";
+    el2.style.paddingtop ="10px";
+    document.getElementById("Find The FB").appendChild(el2);
+}
+
+for (let i = 0; i < ZBM_Commands.length; i++) {
+    var command = ZBM_Commands[i]
     var el = document.createElement('p');
     el.innerHTML = command;
     el.style.margin = "5px";
     el.style.marginbottom = "8px";
     el.style.paddingtop ="10px";
-    document.getElementById("Find The FB").appendChild(el);
+    document.getElementById("ZBM").appendChild(el);
+}
+
+for (let i = 0; i < Live_Rich_Commands.length; i++) {
+    var command = Live_Rich_Commands[i]
+    var el = document.createElement('p');
+    el.innerHTML = command;
+    el.style.margin = "5px";
+    el.style.marginbottom = "8px";
+    el.style.paddingtop ="10px";
+    document.getElementById("Live Rich").appendChild(el);
 }
