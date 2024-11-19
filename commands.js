@@ -107,6 +107,20 @@ var AnrtherAdopt_Commands = [
     "autounsit / unautounsit"
 ]
 
+var Adopt_A_Kid_Commands = [
+    "givemoney (num)",
+    "setmoney (num)",
+    "banlands (plr)",
+    "fling (plr)",
+    "tp (plr1) (plr2)",
+    "bald (plr)",
+    "black (plr)",
+    "white (plr)",
+    "bring (plr)",
+    "rocket (plr)",
+    "void (plr)"
+]
+
 for (let i = 0; i < Life_In_Paradise_Commands.length; i++) {
     var command = Life_In_Paradise_Commands[i]
     var el = document.createElement('p');
@@ -145,4 +159,14 @@ for (let i = 0; i < AnrtherAdopt_Commands.length; i++) {
     el.style.marginbottom = "8px";
     el.style.paddingtop ="10px";
     document.getElementById("AnrtherAdopt").appendChild(el);
+}
+
+for (let i = 0; i < Adopt_A_Kid_Commands.length; i++) {
+    var command = Adopt_A_Kid_Commands[i]
+    var el = document.createElement('p');
+    el.innerHTML = command;
+    el.style.margin = "5px";
+    el.style.marginbottom = "8px";
+    el.style.paddingtop ="10px";
+    document.getElementById("Adopt A Kid").appendChild(el);
 }
