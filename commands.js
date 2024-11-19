@@ -1,5 +1,3 @@
-// <p style="margin: 5px;margin-bottom: 2px;padding-top: 10px;">tp (plr1) (plr2)</p>
-
 var Life_In_Paradise_Commands = [
     "tp (plr1) (plr2)",
     "dupestroller (num)",
