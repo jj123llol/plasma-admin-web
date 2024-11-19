@@ -4,4 +4,4 @@ function addFunctionality(button,link){
     }
 }
 
-addFunctionality("cmds", "/plasma-admin-web/commands")
+addFunctionality("cmds", "/plasma-admin-web/commands") // Open The Command Thing OFC
