@@ -18,16 +18,19 @@
       </button>
     </div>
     <textarea id="Loadstring" title="Click to Copy" readonly>
-      -- [[
-      JJJ / Hude / Rev Was Here!
+      --[[
+      JJJ / Hude/ Rev Was Here!
 
       Free Version Of Plasma Admin
       ]]
+
       getgenv().selectedprefix = ">" -- use ; , : , / , etc.
 
-      getgenv().cmdbarprefix = Enum.Keycode.Minus
+      getgenv().cmdbarprefix = Enum.KeyCode.Minus
 
       loadstring(game:HttpGet("https://raw.githubusercontent.com/jj123llol/sex-admin/refs/heads/main/Plasma%20Admin%20free",true))()
+
+      print("There Are "..#plasmaadmin.commands.." commands loaded...")
     </textarea>
   </body>
 <script src="index.js"></script>
