@@ -46,12 +46,33 @@ var Life_In_Paradise_Commands = [
     "heart"
 ]
 
+var Adopt_And_Raise_baby_Commands = [
+    "givemoney (num)",
+    "setmoney (num)",
+    "banlands (plr)",
+    "fling (plr)",
+    "tp (plr1) (plr2)",
+    "bald (plr)",
+    "black (plr)",
+    "white (plr)",
+]
+
 for (let i = 0; i < Life_In_Paradise_Commands.length; i++) {
     var command = Life_In_Paradise_Commands[i]
     var el = document.createElement('p');
     el.innerHTML = command;
     el.style.margin = "5px";
-    el.style.marginbottom = "2px";
+    el.style.marginbottom = "8px";
     el.style.paddingtop ="10px";
     document.getElementById("Life In Paradise").appendChild(el);
+}
+
+for (let i = 0; i < Adopt_And_Raise_baby_Commands.length; i++) {
+    var command = Adopt_And_Raise_baby_Commands[i]
+    var el = document.createElement('p');
+    el.innerHTML = command;
+    el.style.margin = "5px";
+    el.style.marginbottom = "8px";
+    el.style.paddingtop ="10px";
+    document.getElementById("Adopt And Raise Baby").appendChild(el);
 }
