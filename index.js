@@ -5,7 +5,7 @@ function addFunctionality(button,link, isSelf){
         }
     }else{
         document.getElementById(button).onclick = function() {
-            window.open(link,"_self");
+            window.open(link);
         }
     }
 }
