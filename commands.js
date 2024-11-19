@@ -185,6 +185,10 @@ var Live_Rich_Commands = [
     "gear (id)"
 ]
 
+var Shark_Bite_Commands = [
+
+]
+
 for (let i = 0; i < Life_In_Paradise_Commands.length; i++) {
     var command = Life_In_Paradise_Commands[i]
     var el = document.createElement('p');
@@ -280,4 +284,14 @@ for (let i = 0; i < Live_Rich_Commands.length; i++) {
     el.style.marginbottom = "8px";
     el.style.paddingtop ="10px";
     document.getElementById("Live Rich").appendChild(el);
+}
+
+for (let i = 0; i < Shark_Bite_Commands.length; i++) {
+    var command = Shark_Bite_Commands[i]
+    var el = document.createElement('p');
+    el.innerHTML = command;
+    el.style.margin = "5px";
+    el.style.marginbottom = "8px";
+    el.style.paddingtop ="10px";
+    document.getElementById("sharkBite").appendChild(el);
 }
