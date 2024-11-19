@@ -210,6 +210,38 @@ var Shark_Bite_Commands = [
     "fakeadmin"
 ]
 
+var Break_in_2_Commands = [
+    "btools",
+    "kill (plr)",
+    "bald (plr)",
+    "kick (plr)",
+    "noclothes (plr)",
+    "remhumanoid (plr)",
+    "nohrp (plr)",
+    "getmedkit (num)",
+    "getpizza (num)",
+    "getapple (num)",
+    "getcookie (num)",
+    "getchips (num)",
+    "getexpiredcola (num)",
+    "getcola (num)",
+    "getrainbowpizza (num)",
+    "getrainbowbox (num)",
+    "maxstats",
+    "savedog",
+    "getmouse",
+    "getgoldpizza (num)",
+    "getnpcs"
+]
+
+var KAT_Commands = [
+    "goto (plr)",
+    "disarm (plr)",
+    "playsong (id)",
+    "kill (plr) -- Buggy",
+    "GunMods -- Executor Must Support GetGc"
+]
+
 for (let i = 0; i < Life_In_Paradise_Commands.length; i++) {
     var command = Life_In_Paradise_Commands[i]
     var el = document.createElement('p');
@@ -315,4 +347,24 @@ for (let i = 0; i < Shark_Bite_Commands.length; i++) {
     el.style.marginbottom = "8px";
     el.style.paddingtop ="10px";
     document.getElementById("sharkBite").appendChild(el);
+}
+
+for (let i = 0; i < Break_in_2_Commands.length; i++) {
+    var command = Break_in_2_Commands[i]
+    var el = document.createElement('p');
+    el.innerHTML = command;
+    el.style.margin = "5px";
+    el.style.marginbottom = "8px";
+    el.style.paddingtop ="10px";
+    document.getElementById("break in 2").appendChild(el);
+}
+
+for (let i = 0; i < KAT_Commands.length; i++) {
+    var command = KAT_Commands[i]
+    var el = document.createElement('p');
+    el.innerHTML = command;
+    el.style.margin = "5px";
+    el.style.marginbottom = "8px";
+    el.style.paddingtop ="10px";
+    document.getElementById("KAT").appendChild(el);
 }
