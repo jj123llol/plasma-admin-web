@@ -85,6 +85,28 @@ var Rays_Mod_Commands = [
     "pumpking"
 ]
 
+var AnrtherAdopt_Commands = [
+    "tp (plr1) (plr2)",
+    "dupestroller (num)",
+    "ghost / unghost",
+    "white (plr)",
+    "black (plr)",
+    "bald (plr)",
+    "noclothes (plr)",
+    "fling (plr)",
+    "banlands (plr)",
+    "void (plr)",
+    "antivoid / unantivoid",
+    "rocket (plr)",
+    "bring (plr)",
+    "tweenbring (plr)",
+    "fasttweenbring (plr)",
+    "afk / unafk",
+    "removeclothes -- You know the drill.. need a good FTI",
+    "seat",
+    "autounsit / unautounsit"
+]
+
 for (let i = 0; i < Life_In_Paradise_Commands.length; i++) {
     var command = Life_In_Paradise_Commands[i]
     var el = document.createElement('p');
@@ -113,4 +135,14 @@ for (let i = 0; i < Rays_Mod_Commands.length; i++) {
     el.style.marginbottom = "8px";
     el.style.paddingtop ="10px";
     document.getElementById("Rays Mod").appendChild(el);
+}
+
+for (let i = 0; i < AnrtherAdopt_Commands.length; i++) {
+    var command = AnrtherAdopt_Commands[i]
+    var el = document.createElement('p');
+    el.innerHTML = command;
+    el.style.margin = "5px";
+    el.style.marginbottom = "8px";
+    el.style.paddingtop ="10px";
+    document.getElementById("AnrtherAdopt").appendChild(el);
 }
