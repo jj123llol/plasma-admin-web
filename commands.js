@@ -55,6 +55,34 @@ var Adopt_And_Raise_baby_Commands = [
     "bald (plr)",
     "black (plr)",
     "white (plr)",
+    "rainbowstrol / unrainbowstrol",
+    "bring (plr)",
+    "rocket (plr)",
+    "void (plr)"
+]
+
+var Rays_Mod_Commands = [
+    "lockserver / unlockserver",
+    "size (num)",
+    "bighead",
+    "paper",
+    "headless",
+    "fat",
+    "tall",
+    "banlands (plr)",
+    "hp (num)",
+    "loopkill (plr) / unloopkill (plr)",
+    "rocket (plr)",
+    "void (plr)",
+    "loopbring (plr) / unloopbring (plr)",
+    "fling (plr)",
+    "ban (plr)",
+    "freeze (plr) / unfreeze (plr)",
+    "kill (plr)",
+    "bring (plr)",
+    "claim (plr)",
+    "kick (plr)",
+    "pumpking"
 ]
 
 for (let i = 0; i < Life_In_Paradise_Commands.length; i++) {
@@ -75,4 +103,14 @@ for (let i = 0; i < Adopt_And_Raise_baby_Commands.length; i++) {
     el.style.marginbottom = "8px";
     el.style.paddingtop ="10px";
     document.getElementById("Adopt And Raise Baby").appendChild(el);
+}
+
+for (let i = 0; i < Rays_Mod_Commands.length; i++) {
+    var command = Rays_Mod_Commands[i]
+    var el = document.createElement('p');
+    el.innerHTML = command;
+    el.style.margin = "5px";
+    el.style.marginbottom = "8px";
+    el.style.paddingtop ="10px";
+    document.getElementById("Rays Mod").appendChild(el);
 }
