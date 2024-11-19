@@ -4,4 +4,4 @@ function addFunctionality(button,link){
     }
 }
 
-addFunctionality("cmds", "/commands")
+addFunctionality("cmds", "/plasma-admin-web/commands")
