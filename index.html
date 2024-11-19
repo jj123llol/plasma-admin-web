@@ -1,41 +1,149 @@
 <!DOCTYPE html>
-<html>
-  <title>Plasma Admin</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link id="theicon" rel="icon" href= "https://github.com/jj123llol/plasma-admin-web/raw/refs/heads/main/image-265.ico" type="image/x-icon">
-  <meta name="description" content="Plasma Admin Roblox Script!">
-  <meta name="keywords" content="Plasma, Admin, Plasma Admin, Roblox Script, exploiting, script, roblox, roblox exploiting">
-  <link rel="stylesheet" href="index.css">
-  <body>
-    <img style="margin-bottom: 100px;width:200px;height:200px;" src="https://raw.githubusercontent.com/jj123llol/plasma-admin-web/refs/heads/main/image-265.png">
-    <h2 style="margin: 5px;margin-bottom: 20px;padding-top: 10px;">We Are A Roblox Admin Script, We Support Plugins, Have A Universal, And Have Custom Commands For Some Games!</h2>
-    <h2 style="margin: 5px;margin-bottom: 100px;padding-top: 30px;">We Have A Free and Paid Version!</h2>
-    <h2 style="margin: 5px;margin-bottom: 100px;padding-top: 30px;">Contact Dev Team: <a href="https://mail.google.com/mail/?view=cm&to=plasma.roblox.devs@gmail.com">plasma.roblox.devs@gmail.com</a></h2>
-    <h2 style="margin: 5px;margin-bottom: 100px;padding-top: 30px;">Paid Version Costs: <br> 100 robux. <br> 1.25 USD </h2>
-    <button id="cmds" class="bttn " width="50px " title="commands" style="margin-bottom: 50px;color: rgba(255,255,255, 1);background-color: rgba(0, 0, 0, 0.25);border-radius: 10px;height: 50px; ">
-       Commands For Games
-    </button>
-    <div class="ddiv">
-      <button id="ds" class="bttn " width="50px " title="Discord" style="margin-bottom: 50px;color: rgba(255,255,255, 1);background-color: rgba(0, 0, 0, 0.25);border-radius: 10px;height: 50px; ">
-         Discord
-      </button>
+  <title>Plasma Admin | Roblox Script</title>
+  <link rel="icon" href="https://github.com/jj123llol/plasma-admin-web/raw/refs/heads/main/image-265.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #3d3d3d;
+      --secondary-color: #A9A9A9;
+      --background-color: #1E1E1E;
+      --text-color: #F0F0F0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background-color: #2C2C2C;
+      border-radius: 1rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      padding: 3rem;
+      text-align: center;
+    }
+
+    .logo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons a {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      margin: 0 0.5rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-buttons a:hover {
+      background-color: #5E5CE6;
+    }
+
+    .loadstring {
+      width: 100%;
+      background-color: #1E1E1E;
+      color: #ebebeb;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+      resize: none;
+      font-family: monospace;
+      border: 1px solid var(--secondary-color);
+    }
+
+    .image-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .image-gallery img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://raw.githubusercontent.com/jj123llol/plasma-admin-web/refs/heads/main/image-265.png" alt="plasma Logo" class="logo">
+    <h1>Plasma Admin</h1>
+    <h2>Roblox Admin Script with Universal Support and Custom Game Commands</h2>
+    <div class="cta-buttons">
+      <a href="#">Commands For Games</a>
+      <a href="#" onclick="window.open('https://discord.gg/XPgzdFZtYw')">Discord</a>
     </div>
-    <textarea id="Loadstring" title="Click to Copy" readonly>
-      --[[
-      JJJ / Hude/ Rev Was Here!
-
-      Free Version Of Plasma Admin
-      ]]
-
-      getgenv().selectedprefix = ">" -- use ; , : , / , etc.
-
-      getgenv().cmdbarprefix = Enum.KeyCode.Minus
-
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/jj123llol/sex-admin/refs/heads/main/Plasma%20Admin%20free",true))()
-
-      print("There Are "..#plasmaadmin.commands.." commands loaded...")
+    <textarea class="loadstring" rows="6" readonly>
+--[[ JJJ / Hude/ Rev Was Here! Free Version Of Plasma Admin ]]
+getgenv().selectedprefix = ">" 
+getgenv().cmdbarprefix = Enum.KeyCode.Minus
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jj123llol/sex-admin/refs/heads/main/Plasma%20Admin%20free",true))()
+print("There Are "..#plasmaadmin.commands.." commands loaded...")
     </textarea>
-    <img style="margin-bottom: 10px;width:200px;height:200px;" src="https://raw.githubusercontent.com/jj123llol/plasma-admin-web/refs/heads/main/plasma.gif">
-  </body>
-<script src="index.js"></script>
+    <div class="image-gallery">
+      <img src="https://raw.githubusercontent.com/jj123llol/plasma-admin-web/refs/heads/main/plasma.gif" alt="plasma GIF">
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.loadstring').addEventListener('click', function() {
+      this.select();
+      document.execCommand('copy');
+      alert('copied to clipboard!');
+    });
+
+    document.querySelectorAll('.cta-buttons a').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert(`${btn.textContent} coming soon!`);
+      });
+    });
+  </script>
+</body>
 </html>
