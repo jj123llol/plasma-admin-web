@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <title>Plasma Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link id="theicon" rel="icon" href= "https://github.com/jj123llol/plasma-admin-web/raw/refs/heads/main/image-265.ico" type="image/x-icon">
+  <meta name="description" content="Plasma Admin Roblox Script!">
+  <meta name="keywords" content="Plasma, Admin, Plasma Admin, Roblox Script, exploiting, script, roblox, roblox exploiting">
+  <link rel="stylesheet" href="index.css">
+  <body>
+    <img style="margin-bottom: 100px;width:200px;height:200px;" src="https://raw.githubusercontent.com/jj123llol/plasma-admin-web/refs/heads/main/image-265.png">
+    <h2 style="margin: 5px;margin-bottom: 20px;padding-top: 10px;">We Are A Roblox Admin Script, We Support Plugins, Have A Universal, And Have Custom Commands For Some Games!</h2>
+    <h2 style="margin: 5px;margin-bottom: 100px;padding-top: 30px;">We Have A Free and Paid Version!</h2>
+    <h2 style="margin: 5px;margin-bottom: 100px;padding-top: 30px;">Contact Dev Team: <a href="https://mail.google.com/mail/?view=cm&to=plasma.roblox.devs@gmail.com">plasma.roblox.devs@gmail.com</a></h2>
+    <h2 style="margin: 5px;margin-bottom: 100px;padding-top: 30px;">Paid Version Costs: <br> 100 robux. <br> 1.25 USD </h2>
+    <button id="cmds" class="bttn " width="50px " title="commands" style="margin-bottom: 50px;color: rgba(255,255,255, 1);background-color: rgba(0, 0, 0, 0.25);border-radius: 10px;height: 50px; ">
+       Commands For Games
+    </button>
+    <div class="ddiv">
+      <button id="ds" class="bttn " width="50px " title="Discord" style="margin-bottom: 50px;color: rgba(255,255,255, 1);background-color: rgba(0, 0, 0, 0.25);border-radius: 10px;height: 50px; ">
+         Discord
+      </button>
+    </div>
+    <textarea id="Loadstring" title="Click to Copy" readonly>
+      --[[
+      JJJ / Hude/ Rev Was Here!
+
+      Free Version Of Plasma Admin
+      ]]
+
+      getgenv().selectedprefix = ">" -- use ; , : , / , etc.
+
+      getgenv().cmdbarprefix = Enum.KeyCode.Minus
+
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/jj123llol/sex-admin/refs/heads/main/Plasma%20Admin%20free",true))()
+
+      print("There Are "..#plasmaadmin.commands.." commands loaded...")
+    </textarea>
+    <img style="margin-bottom: 10px;width:200px;height:200px;" src="https://raw.githubusercontent.com/jj123llol/plasma-admin-web/refs/heads/main/plasma.gif">
+  </body>
+<script src="index.js"></script>
+</html>
