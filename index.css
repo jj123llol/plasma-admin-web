@@ -6,3 +6,26 @@ body {
     color: rgba(255, 255, 255, 1);
     height: max(90vh, 650px);
 }
+
+textarea {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    resize: none;
+    height: 55px;
+    font-size: 15px;
+    width: 99%;
+    border-width: 0px;
+    text-wrap: nowrap;
+    color: white;
+    background-color: rgb(69 69 69);
+    overflow: hidden;
+    border-color: rgba(0, 0, 0, 0);
+}
+
+textarea:focus {
+    cursor: default;
+    background-color: rgb(69 69 69);
+    color: rgb(255, 255, 255);
+    border-color: rgba(0, 0, 0, 0);
+}
