@@ -186,7 +186,28 @@ var Live_Rich_Commands = [
 ]
 
 var Shark_Bite_Commands = [
-
+    "sharkcharms",
+    "boatgui",
+    "killall -- for when your shark",
+    "decreaselag",
+    "day",
+    "night",
+    "autofarm / autofarmoff",
+    "esp",
+    "nofog",
+    "lobby",
+    "sharktunnel",
+    "island1",
+    "island2",
+    "bigisland",
+    "cargo",
+    "safeafk",
+    "uselessoxygen",
+    "nomines",
+    "refreshsharkchance",
+    "refreshhealth",
+    "godmode",
+    "fakeadmin"
 ]
 
 for (let i = 0; i < Life_In_Paradise_Commands.length; i++) {
