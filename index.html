@@ -138,12 +138,6 @@ print("There Are "..#plasmaadmin.commands.." commands loaded...")
       document.execCommand('copy');
       alert('copied to clipboard!');
     });
-
-    document.querySelectorAll('.cta-buttons a').forEach(btn => {
-      btn.addEventListener('click', () => {
-        alert(`${btn.textContent} coming soon!`);
-      });
-    });
   </script>
 </body>
 </html>
