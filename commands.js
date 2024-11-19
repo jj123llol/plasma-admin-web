@@ -1,3 +1,18 @@
+function addFunctionality(button,link, isSelf){
+    if (isSelf){
+        document.getElementById(button).onclick = function() {
+            window.open(link,"_self");
+        }
+    }else{
+        document.getElementById(button).onclick = function() {
+            window.open(link);
+        }
+    }
+}
+
+addFunctionality("MainPage", "/plasma-admin-web/", true) // Open The Command Thing OFC
+
+// Add Commands
 var Life_In_Paradise_Commands = [
     "tp (plr1) (plr2)",
     "dupestroller (num)",
