@@ -121,6 +121,17 @@ var Adopt_A_Kid_Commands = [
     "void (plr)"
 ]
 
+var Work_At_A_Pizza_Place_Commands = [
+    "island (plr)",
+    "kill (plr)",
+    "bring (plr)",
+    "skydive (plr)",
+    "becomemanager",
+    "kick (plr)",
+    "resetvotes",
+    "banlands (plr)"
+]
+
 for (let i = 0; i < Life_In_Paradise_Commands.length; i++) {
     var command = Life_In_Paradise_Commands[i]
     var el = document.createElement('p');
@@ -169,4 +180,14 @@ for (let i = 0; i < Adopt_A_Kid_Commands.length; i++) {
     el.style.marginbottom = "8px";
     el.style.paddingtop ="10px";
     document.getElementById("Adopt A Kid").appendChild(el);
+}
+
+for (let i = 0; i < Work_At_A_Pizza_Place_Commands.length; i++) {
+    var command = Work_At_A_Pizza_Place_Commands[i]
+    var el = document.createElement('p');
+    el.innerHTML = command;
+    el.style.margin = "5px";
+    el.style.marginbottom = "8px";
+    el.style.paddingtop ="10px";
+    document.getElementById("Work At").appendChild(el);
 }
