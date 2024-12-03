@@ -59,7 +59,10 @@ var Life_In_Paradise_Commands = [
     "skintone (white/black) -- need good fire touch",
     "fairywand",
     "heart",
-    "turkeyfling (plr)"
+    "turkeyfling (plr)",
+    "strollerdick",
+    "void2 (plr)",
+    "removeseats"
 ]
 
 var Adopt_And_Raise_baby_Commands = [
