@@ -62,7 +62,9 @@ var Life_In_Paradise_Commands = [
     "turkeyfling (plr)",
     "strollerdick",
     "void2 (plr)",
-    "removeseats"
+    "removeseats",
+    "bring2 (plr)",
+    "banlands2 (plr)"
 ]
 
 var Adopt_And_Raise_baby_Commands = [
