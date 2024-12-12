@@ -262,7 +262,6 @@ var KAT_Commands = [
     "goto (plr)",
     "disarm (plr)",
     "playsong (id)",
-    "kill (plr) -- Buggy",
     "GunMods -- Executor Must Support GetGc"
 ]
 
