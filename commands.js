@@ -265,6 +265,38 @@ var KAT_Commands = [
     "GunMods -- Executor Must Support GetGc"
 ]
 
+var brookhaven_Commands = [
+    "void (plr)",
+    "deathvoid (plr)",
+    "bring (plr)",
+    "deathbring (plr)",
+    "banlands (plr)",
+    "deathbanlands (plr)",
+    "skydive (plr)",
+    "deathskydive (plr)",
+    "rocket (plr)",
+    "fling (plr),
+    "jail (plr)",
+    "deathjail (plr)",
+    "tp (plr) (plr2)",
+    "deathtp (plr) (plr2)"
+]
+
+var PrisonLife_Commands = [
+    "superpunch",
+    "taserbypass",
+    "arrestall",
+    "escape",
+    "nocards",
+    "killaura",
+    "prison",
+    "yard",
+    "crimbase",
+    "rainbowguns",
+    "grabknife",
+    "jeff"
+]
+
 for (let i = 0; i < Life_In_Paradise_Commands.length; i++) {
     var command = Life_In_Paradise_Commands[i]
     var el = document.createElement('p');
@@ -390,4 +422,24 @@ for (let i = 0; i < KAT_Commands.length; i++) {
     el.style.marginbottom = "8px";
     el.style.paddingtop ="10px";
     document.getElementById("KAT").appendChild(el);
+}
+
+for (let i = 0; i < brookhaven_Commands.length; i++) {
+    var command = brookhaven_Commands[i]
+    var el = document.createElement('p');
+    el.innerHTML = command;
+    el.style.margin = "5px";
+    el.style.marginbottom = "8px";
+    el.style.paddingtop ="10px";
+    document.getElementById("BH").appendChild(el);
+}
+
+for (let i = 0; i < PrisonLife_Commands.length; i++) {
+    var command = PrisonLife_Commands[i]
+    var el = document.createElement('p');
+    el.innerHTML = command;
+    el.style.margin = "5px";
+    el.style.marginbottom = "8px";
+    el.style.paddingtop ="10px";
+    document.getElementById("PL").appendChild(el);
 }
