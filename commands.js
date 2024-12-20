@@ -275,7 +275,7 @@ var brookhaven_Commands = [
     "skydive (plr)",
     "deathskydive (plr)",
     "rocket (plr)",
-    "fling (plr),
+    "fling (plr)",
     "jail (plr)",
     "deathjail (plr)",
     "tp (plr) (plr2)",
