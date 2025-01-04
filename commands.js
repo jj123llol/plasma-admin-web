@@ -157,6 +157,10 @@ var Work_At_A_Pizza_Place_Commands = [
 ]
 
 var Find_The_Commands = [
+    "Patched",
+]
+/*
+var Find_The_Commands = [
     "nobaseplate",
     "bald (plr)",
     "kick (plr)",
@@ -177,8 +181,7 @@ var Find_The_Commands = [
     "getpasses",
     "bodyswap (plr)",
     "kill2 (plr)"
-]
-
+*/
 var ZBM_Commands = [
     "pickupmoney",
     "getsamples",
