@@ -10,6 +10,7 @@ You Can Download Or Make Plugins, Locate Workspace > Plasma Admin > Plugins, Thi
 
 # Making A Plugin
 
+
 # Adding Commands
 
 The "addcmd" Function Is Used To Make A Command, The Args Are The Name, What Shows Up On The Cmd List, And The Function.
@@ -28,6 +29,7 @@ end)
 
 The "|" Symbol Can Be Used To Seperate Different Alias For The Command, addcmd("kill|ckill|krill", "kill (plr)", function()) Would Be An Example Of This.
 
+
 # Creating Notifications
 
 The "createnotification" function Is Used To Make Notifications For Your Plugins
@@ -36,6 +38,16 @@ createnotification("Admin", "This Is A Notification", 5)
 
 Would Create A Notification That Says "Admin: This Is A Notification" For Five Seconds.
 
+
 # Posting Your Plugin
 
 We Have A Plugins Channel In The Discord To Post Your Script, To Ensure Saftey All Plugins MUST Be Unobfuscated.
+
+
+# Running Commands
+
+The Function "runcommand" Can Be Used To Run Commands In The Admin.
+
+runcommand("re", {})
+
+The Table Passed Is The Args Of The Command, While The String Is The Command To Run.
