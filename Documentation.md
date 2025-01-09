@@ -2,6 +2,8 @@
 
 To Start Off, Plasma Admin Is A Universal Admin Script, With Plugins And Custom Commands For Certain Games.
 
+Plasma Admin Fully Encourages The Use And Sharing Of Plugins.
+
 
 # Plugins
 
@@ -13,11 +15,11 @@ You Can Download Or Make Plugins, Locate Workspace > Plasma Admin > Plugins, Thi
 
 # Adding Commands
 
-The "addcmd" Function Is Used To Make A Command, The Args Are The Name, What Shows Up On The Cmd List, And The Function.
+The "addcmd" Function Is Used To Make A Command, The Args Are The Name, What Shows Up On The Cmd List, The Function, And To Split The Args Or Not.
 
 The "getPlayer" Returns A List Of Player Instances With The Users That Contain The Inputed String In Their Display Or User. You Can Also Put "all", "others", "random" or "me".
 
-Example Of A Command:
+Example Of Commands:
 
 addcmd("kill", "kill (plr)", function(plr)
     local targets = getPlayer(plr)
@@ -25,7 +27,15 @@ addcmd("kill", "kill (plr)", function(plr)
        targetChar = target.Character or target.CharacterAdded:Wait()
        targetChar:WaitForChild("Humanoid").Health = 0
     end
-end)
+end, true)
+
+The True Means The Arguments Will Be Split, Allowing Multiple Args To Be Put In, Like You Could Do A Command That Lowers A Players Health To A Specific Value.
+
+addcmd("print", "print (msg)", function(msg)
+    print(msg)
+end, false)
+
+The False Means The Arguments Will Stay As One Instead Of Splitting up
 
 The "|" Symbol Can Be Used To Seperate Different Alias For The Command, addcmd("kill|ckill|krill", "kill (plr)", function()) Would Be An Example Of This.
 
