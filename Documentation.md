@@ -1,13 +1,13 @@
-# This Is The Offical Documentation Of Plasma Admin.
+# This is the offical documentation of Plasma Admin.
 
-To Start Off, Plasma Admin Is A Universal Admin Script, With Plugins And Custom Commands For Certain Games.
+To start off, Plasma Admin is a universal admin script with plugins, and custom commands for certain games.
 
-Plasma Admin Fully Encourages The Use And Sharing Of Plugins.
+Plasma Admin fully encourages the use and sharing of plugins.
 
 
 # Plugins
 
-You Can Download Or Make Plugins, Locate Workspace > Plasma Admin > Plugins, This Is What You'll Put The Plugins You Download Or Create.
+You can download, or make plugins. Locate workspace > Plasma Admin > plugins. This is where You'll put the plugins you download or create.
 
 
 # Making A Plugin
@@ -15,11 +15,11 @@ You Can Download Or Make Plugins, Locate Workspace > Plasma Admin > Plugins, Thi
 
 ## Adding Commands
 
-The "addcmd" Function Is Used To Make A Command, The Args Are The Name, What Shows Up On The Cmd List, The Function, And To Split The Args Or Not.
+The "addcmd" function is used to make a command. The args are the name, what shows up on the cmd list, the function, and whether to split the args or not.
 
-The "getPlayer" Returns A List Of Player Instances With The Users That Contain The Inputed String In Their Display Or User. You Can Also Put "all", "others", "random" or "me".
+The "getPlayer" function returns a list of player instances with the users that contain the inputed string in their display, or user. You can alsopPut "all", "others", "random" or "me".
 
-Example Of Commands:
+Example of commands:
 
 addcmd("kill", "kill (plr)", function(plr)
     local targets = getPlayer(plr)
@@ -29,35 +29,36 @@ addcmd("kill", "kill (plr)", function(plr)
     end
 end, true)
 
-The True Means The Arguments Will Be Split, Allowing Multiple Args To Be Put In, Like You Could Do A Command That Lowers A Players Health To A Specific Value.
+The true means the arguments will be split, allowing multiple args to be put in. 
+A example would be a command that lowers a players health to a specified value.
 
 addcmd("print", "print (msg)", function(msg)
     print(msg)
 end, false)
 
-The False Means The Arguments Will Stay As One Instead Of Splitting up
+The false means the arguments will stay as one instead of splitting up
 
-The "|" Symbol Can Be Used To Seperate Different Alias For The Command, addcmd("kill|ckill|krill", "kill (plr)", function()) Would Be An Example Of This.
+The "|" symbol can be used to seperate different alias for the command, addcmd("kill|ckill|krill", "kill (plr)", function()) would be an example of this.
 
 
 ## Creating Notifications
 
-The "createnotification" function Is Used To Make Notifications For Your Plugins
+The "createnotification" function is used to make notifications for your plugins
 
 createnotification("Admin", "This Is A Notification", 5)
 
-Would Create A Notification That Says "Admin: This Is A Notification" For Five Seconds.
+Would create a notification that says "Admin: This Is A Notification" for five seconds.
 
 
 ## Posting Your Plugin
 
-We Have A Plugins Channel In The Discord To Post Your Script, To Ensure Saftey All Plugins MUST Be Unobfuscated.
+We have a plugins channel in the discord to post your script, to ensure saftey all plugins mUST be unobfuscated.
 
 
 # Running Commands
 
-The Function "runcommand" Can Be Used To Run Commands In The Admin.
+The function "runcommand" can be used to run commands in Plasma Admin.
 
 runcommand("re", {})
 
-The Table Passed Is The Args Of The Command, While The String Is The Command To Run.
+The table passed is the args of the command, while the string is the command to run.
