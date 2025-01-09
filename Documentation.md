@@ -49,7 +49,7 @@ createnotification("Admin", "This Is A Notification", 5)
 Would Create A Notification That Says "Admin: This Is A Notification" For Five Seconds.
 
 
-# Posting Your Plugin
+## Posting Your Plugin
 
 We Have A Plugins Channel In The Discord To Post Your Script, To Ensure Saftey All Plugins MUST Be Unobfuscated.
 
