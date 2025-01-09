@@ -13,7 +13,7 @@ You Can Download Or Make Plugins, Locate Workspace > Plasma Admin > Plugins, Thi
 # Making A Plugin
 
 
-# Adding Commands
+## Adding Commands
 
 The "addcmd" Function Is Used To Make A Command, The Args Are The Name, What Shows Up On The Cmd List, The Function, And To Split The Args Or Not.
 
@@ -40,7 +40,7 @@ The False Means The Arguments Will Stay As One Instead Of Splitting up
 The "|" Symbol Can Be Used To Seperate Different Alias For The Command, addcmd("kill|ckill|krill", "kill (plr)", function()) Would Be An Example Of This.
 
 
-# Creating Notifications
+## Creating Notifications
 
 The "createnotification" function Is Used To Make Notifications For Your Plugins
 
