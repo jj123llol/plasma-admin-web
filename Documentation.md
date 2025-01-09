@@ -52,7 +52,7 @@ Would create a notification that says "Admin: This Is A Notification" for five s
 
 ## Posting Your Plugin
 
-We have a plugins channel in the discord to post your script, to ensure saftey all plugins mUST be unobfuscated.
+We have a plugins channel in the discord to post your script, to ensure saftey all plugins MUST be unobfuscated.
 
 
 # Running Commands
