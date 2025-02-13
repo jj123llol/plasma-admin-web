@@ -17,7 +17,7 @@ var Life_In_Paradise_Commands = [
     "tp (plr1) (plr2)",
     "dupestroller (num)",
     "banlandsall -- old and should probably not be used..",
-    "tpcar (plr) -- Most Likely dosent work on Executors with Bad Fire Touch",
+    "tpcar (plr)",
     "revealusers / unrevealusers",
     "ghost / unghost",
     "kill2 (plr)",
@@ -42,7 +42,7 @@ var Life_In_Paradise_Commands = [
     "tweenbring (plr)",
     "fasttweenbring (plr)",
     "forceheart (plr) / unforceheart",
-    "givestick (plr) -- broken with bad fire touch",
+    "givestick (plr)",
     "dupewand (num)",
     "heartname",
     "car",
@@ -52,14 +52,15 @@ var Life_In_Paradise_Commands = [
     "funnysignv2",
     "furrynamechanger / unfurrynamechanger",
     "afk / unafk",
-    "removeclothes -- need good fire touch",
+    "removeclothes",
     "seat",
     "autounsit / unautounsit",
-    "spamcolor / unspamcolor -- need good fire touch",
-    "skintone (white/black) -- need good fire touch",
+    "spamcolor / unspamcolor",
+    "skintone (white/black)",
     "fairywand",
     "heart",
     "turkeyfling (plr)",
+    "turkeyvoid (plr)"
     "strollerdick",
     "void2 (plr)",
     "removeseats",
@@ -156,32 +157,6 @@ var Work_At_A_Pizza_Place_Commands = [
     "banlands (plr)"
 ]
 
-var Find_The_Commands = [
-    "Patched",
-]
-/*
-var Find_The_Commands = [
-    "nobaseplate",
-    "bald (plr)",
-    "kick (plr)",
-    "noclothes (plr)",
-    "remhumanoid (plr)",
-    "nohrp (plr)",
-    "kill (plr)",
-    "nolimbs (plr)",
-    "half (plr)",
-    "shutdown",
-    "btools",
-    "ban (plr) / unban (plr)",
-    "lockserver / unlockserver",
-    "stun (plr) / unstun (plr)",
-    "jump (plr)",
-    "loopjump (plr) / unloopjump (plr)",
-    "unanchorall",
-    "getpasses",
-    "bodyswap (plr)",
-    "kill2 (plr)"
-*/
 var ZBM_Commands = [
     "pickupmoney",
     "getsamples",
@@ -358,23 +333,6 @@ for (let i = 0; i < Work_At_A_Pizza_Place_Commands.length; i++) {
     el.style.marginbottom = "8px";
     el.style.paddingtop ="10px";
     document.getElementById("Work At").appendChild(el);
-}
-
-for (let i = 0; i < Find_The_Commands.length; i++) {
-    var command = Find_The_Commands[i]
-    var el = document.createElement('p');
-    el.innerHTML = command;
-    el.style.margin = "5px";
-    el.style.marginbottom = "8px";
-    el.style.paddingtop ="10px";
-    document.getElementById("Find The Flags").appendChild(el);
-    
-    var el2 = document.createElement('p');
-    el2.innerHTML = command;
-    el2.style.margin = "5px";
-    el2.style.marginbottom = "8px";
-    el2.style.paddingtop ="10px";
-    document.getElementById("Find The FB").appendChild(el2);
 }
 
 for (let i = 0; i < ZBM_Commands.length; i++) {
