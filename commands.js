@@ -60,7 +60,7 @@ var Life_In_Paradise_Commands = [
     "fairywand",
     "heart",
     "turkeyfling (plr)",
-    "turkeyvoid (plr)"
+    "turkeyvoid (plr)",
     "strollerdick",
     "void2 (plr)",
     "removeseats",
