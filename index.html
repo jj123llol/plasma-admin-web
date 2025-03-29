@@ -3,17 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plasma Admin | Roblox Script</title>
+  <meta name="description" content="Plasma Admin - Advanced Roblox Admin Script with plugins, universal support and custom game commands">
+  <title>Plasma Admin | Advanced Roblox Script</title>
   <link rel="icon" href="https://github.com/jj123llol/plasma-admin-web/raw/refs/heads/main/image-265.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary-color: #3d3d3d;
+      --primary-color: #5E5CE6;
+      --primary-dark: #3634a8;
       --secondary-color: #A9A9A9;
-      --background-color: #1E1E1E;
+      --background-color: #121212;
+      --card-color: #1E1E1E;
       --text-color: #F0F0F0;
+      --text-muted: #b0b0b0;
+      --success-color: #28a745;
+      --border-radius: 12px;
+      --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      --tab-active: #5E5CE6;
+      --tab-inactive: #2a2a2a;
     }
 
     * {
@@ -23,118 +33,1432 @@
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: var(--background-color);
       color: var(--text-color);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      background-color: var(--card-color);
+      box-shadow: var(--box-shadow);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    header.hidden {
+      transform: translateY(-100%);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-small {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #5E5CE6, #FF375F);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius);
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(94, 92, 230, 0.2);
+      color: var(--primary-color);
+    }
+
+    .nav-links a.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    /* Enhanced Intro Animation */
+    .intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--background-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      animation: fadeOut 1.5s ease-in-out 3.5s forwards;
+    }
+
+    .intro-content {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      padding: 2rem;
+      animation: slideIn 1s ease-out forwards;
     }
 
-    .container {
-      max-width: 800px;
-      width: 100%;
-      background-color: #2C2C2C;
-      border-radius: 1rem;
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-      padding: 3rem;
-      text-align: center;
-    }
-
-    .logo {
+    .intro-logo {
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      margin-bottom: 2rem;
+      object-fit: cover;
+      border: 5px solid var(--primary-color);
+      box-shadow: 0 0 50px rgba(94, 92, 230, 0.7);
+      animation: 
+        bounce 0.5s ease-in-out 1s 3 alternate;
+    }
+
+    .intro-text {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      background: linear-gradient(90deg, #5E5CE6, #FF375F);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0;
+      animation: 
+        fadeIn 0.5s ease-out 1.5s forwards,
+        glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px rgba(94, 92, 230, 0.7); }
+      to { text-shadow: 0 0 20px rgba(94, 92, 230, 0.9), 0 0 30px rgba(255, 55, 95, 0.7); }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(94, 92, 230, 0.1) 0%, rgba(30, 30, 30, 0) 70%);
+      z-index: -1;
+      animation: pulse 15s infinite alternate;
+    }
+
+    .logo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      object-fit: cover;
+      border: 5px solid var(--primary-color);
+      box-shadow: 0 0 30px rgba(94, 92, 230, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05) rotate(5deg);
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 700;
       margin-bottom: 1rem;
+      background: linear-gradient(90deg, #5E5CE6, #FF375F);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     h2 {
       font-size: 1.5rem;
       font-weight: 400;
       margin-bottom: 2rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .cta-buttons {
       display: flex;
       justify-content: center;
-      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
     }
 
-    .cta-buttons a {
-      display: inline-block;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
       background-color: var(--primary-color);
-      color: var(--text-color);
+      color: white;
       text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
-      margin: 0 0.5rem;
-      transition: background-color 0.3s ease;
+      padding: 0.75rem 1.75rem;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(94, 92, 230, 0.3);
     }
 
-    .cta-buttons a:hover {
-      background-color: #5E5CE6;
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(94, 92, 230, 0.4);
+    }
+
+    .btn-secondary {
+      background-color: var(--card-color);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-secondary:hover {
+      background-color: #2a2a2a;
+    }
+
+    .btn i {
+      font-size: 1rem;
+    }
+
+    .loadstring-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      position: relative;
     }
 
     .loadstring {
       width: 100%;
-      background-color: #1E1E1E;
-      color: #ebebeb;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      margin-bottom: 2rem;
+      background-color: var(--card-color);
+      color: var(--text-color);
+      padding: 1.25rem;
+      border-radius: var(--border-radius);
+      border: 1px solid #333;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
       resize: none;
-      font-family: monospace;
-      border: 1px solid var(--secondary-color);
+      box-shadow: var(--box-shadow);
     }
 
+    .copy-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background-color: rgba(30, 30, 30, 0.7);
+      color: var(--text-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .copy-btn:hover {
+      background-color: var(--primary-color);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      overflow-y: auto;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal.show {
+      display: block;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background-color: var(--card-color);
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      max-width: 900px;
+      width: 90%;
+      box-shadow: var(--box-shadow);
+      position: relative;
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .close-modal:hover {
+      color: var(--primary-color);
+    }
+
+    .modal-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      background: linear-gradient(90deg, #5E5CE6, #FF375F);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Features Modal Content */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .feature-card {
+      background-color: var(--card-color);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--box-shadow);
+      transition: transform 0.3s ease;
+      border: 1px solid #333;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .feature-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .feature-desc {
+      color: var(--text-muted);
+    }
+
+    /* Gallery Modal Content */
     .image-gallery {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .gallery-item {
+      width: 280px;
+      height: 280px;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--box-shadow);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Game Commands Modal - Updated for 13 games */
+    .game-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+
+    .game-item {
+      background-color: rgba(30, 30, 30, 0.5);
+      border-radius: var(--border-radius);
+      padding: 1rem;
+      transition: all 0.3s ease;
+      border: 1px solid #333;
+    }
+
+    .game-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      border-color: var(--primary-color);
+    }
+
+    .game-image {
+      width: 100%;
+      height: 150px;
+      border-radius: var(--border-radius);
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .game-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .game-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      background-color: var(--card-color);
+      padding: 3rem 0;
+      margin-top: auto;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .footer-logo-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .footer-desc {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
       gap: 1rem;
     }
 
-    .image-gallery img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 0.5rem;
-      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: #333;
+      border-radius: 50%;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    .footer-title {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #333;
+      color: var(--text-muted);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--success-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .game-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 8rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://raw.githubusercontent.com/jj123llol/plasma-admin-web/refs/heads/main/image-265.png" alt="plasma Logo" class="logo">
-    <h1>Plasma Admin</h1>
-    <h2>Roblox Admin Script with Plugins, Universal Support and Custom Game Commands</h2>
-    <div class="cta-buttons">
-      <a href="#" onclick="window.open('commands','_self')">Commands For Games</a>
-      <a href="#" onclick="window.open('https://discord.gg/XPgzdFZtYw')">Discord</a>
-      <a href="#" onclick="window.open('https://mail.google.com/mail/?view=cm&to=plasma.roblox.devs@gmail.com')">Email Us</a>
-      <a href="#" onclick="window.open('https://www.youtube.com/@PlasmaAdminDevTeam')">Youtube</a>
-    </div>
-    <textarea class="loadstring" rows="2" readonly>
-join server for updated free version
-    </textarea>
-    <div class="image-gallery">
-      <img src="https://raw.githubusercontent.com/jj123llol/plasma-admin-web/refs/heads/main/plasma.gif" alt="plasma GIF">
+  <!-- Enhanced Intro Animation -->
+  <div class="intro">
+    <div class="intro-content">
+      <img src="https://raw.githubusercontent.com/jj123llol/plasma-admin-web/refs/heads/main/image-265.png" alt="Plasma Logo" class="intro-logo">
+      <div class="intro-text">PLASMA ADMIN Site Made By Kosovo</div>
     </div>
   </div>
 
+  <header id="main-header">
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="https://raw.githubusercontent.com/jj123llol/plasma-admin-web/refs/heads/main/image-265.png" alt="Plasma Logo" class="logo-small">
+        <span class="logo-text">Plasma Admin</span>
+      </div>
+      <div class="nav-links">
+        <a href="#" id="features-btn" class="active"><i class="fas fa-star"></i> Features</a>
+        <a href="#" id="commands-btn"><i class="fas fa-gamepad"></i> Game Commands</a>
+        <a href="#" id="gallery-btn"><i class="fas fa-images"></i> Gallery</a>
+        <a href="https://discord.gg/XPgzdFZtYw" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+        <a href="https://www.youtube.com/@PlasmaAdminDevTeam" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <img src="https://raw.githubusercontent.com/jj123llol/plasma-admin-web/refs/heads/main/image-265.png" alt="Plasma Logo" class="logo">
+      <h1>Plasma Admin</h1>
+      <h2>The most advanced Roblox admin script with plugins, universal support and custom game commands</h2>
+      
+<div class="cta-buttons">
+  <a href="https://jj123llol.github.io/plasma-admin-web/key" target="_blank" class="btn"><i class="fas fa-key"></i> Get Key</a>
+  <a href="https://discord.gg/XPgzdFZtYw" target="_blank" class="btn btn-secondary"><i class="fab fa-discord"></i> Join Discord</a>
+  <a href="https://www.youtube.com/@PlasmaAdminDevTeam" target="_blank" class="btn btn-secondary"><i class="fab fa-youtube"></i> YouTube</a>
+</div>
+      
+      <div class="loadstring-container" id="loadstring">
+        <textarea class="loadstring" rows="2" readonly>--And for the keyless version join are discord and buy it its only 100 robux!
+          --Note with the free version you get less cmds!
+getgenv().selectedprefix = ">" -- use ; , : , / , etc.
+
+getgenv().cmdbarprefix = Enum.KeyCode.Minus
+
+script_key="YOUR KEY";
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/169c1493681890a8d717775b9d2f68ac.lua"))()
+
+print("There Are "..#plasmaadmin.commands.." commands loaded...")</textarea>
+        <button class="copy-btn" id="copyBtn"><i class="far fa-copy"></i> Copy</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img src="https://raw.githubusercontent.com/jj123llol/plasma-admin-web/refs/heads/main/image-265.png" alt="Plasma Logo">
+            <span class="footer-logo-text">Plasma Admin</span>
+          </div>
+          <p class="footer-desc">The most advanced Roblox admin script with universal support and custom game commands.</p>
+          <div class="social-links">
+            <a href="https://discord.gg/XPgzdFZtYw" class="social-link" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="https://www.youtube.com/@PlasmaAdminDevTeam" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://mail.google.com/mail/?view=cm&to=plasma.roblox.devs@gmail.com" class="social-link" target="_blank"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#" id="features-footer-btn">Features</a></li>
+            <li><a href="#" id="commands-footer-btn">Game Commands</a></li>
+            <li><a href="#" id="gallery-footer-btn">Gallery</a></li>
+            <li><a href="#loadstring">Get Script</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="https://discord.gg/XPgzdFZtYw" target="_blank">Discord</a></li>
+            <li><a href="https://www.youtube.com/@PlasmaAdminDevTeam" target="_blank">YouTube</a></li>
+            <li><a href="https://mail.google.com/mail/?view=cm&to=plasma.roblox.devs@gmail.com" target="_blank">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        &copy; 2023 Plasma Admin. All rights reserved. Not affiliated with Roblox Corporation.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Features Modal -->
+  <div class="modal" id="features-modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2 class="modal-title">Plasma Admin Features</h2>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-gamepad"></i>
+          </div>
+          <h3 class="feature-title">Universal Support</h3>
+          <p class="feature-desc">Works on virtually any Roblox game with our advanced detection system and custom game commands.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-plug"></i>
+          </div>
+          <h3 class="feature-title">Plugin System</h3>
+          <p class="feature-desc">Extend functionality with our plugin system. Create or download community-made plugins.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="feature-title">Lightning Fast</h3>
+          <p class="feature-desc">Optimized for performance with minimal impact on your game's performance.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="feature-title">Anti-Cheat Bypass</h3>
+          <p class="feature-desc">Advanced techniques to bypass most anti-cheat systems in popular games.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="feature-title">Active Community</h3>
+          <p class="feature-desc">Join thousands of users in our Discord community for support and updates.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <h3 class="feature-title">Frequent Updates</h3>
+          <p class="feature-desc">Regular updates with new features, bug fixes, and game-specific commands.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Commands Modal - Updated with 13 games -->
+  <div class="modal" id="commands-modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2 class="modal-title">Supported Games & Commands</h2>
+      <div class="game-list">
+        <!-- Game 1 -->
+        <div class="game-item">
+          <img src="https://tr.rbxcdn.com/180DAY-047dd6a8d31e099b84bb49e0319c2cd6/768/432/Image/Webp/noFilter" alt="Life In Paradise" class="game-image">
+          <h4 class="game-title">Life In paradise</h4>
+          <p class="game-desc">revealusers / unrevealusers
+
+ghost / unghost
+
+kill2 (plr)
+
+jail (plr)
+
+white (plr)
+
+black (plr)
+
+bald (plr)
+
+noclothes (plr)
+
+slowkill (plr)
+
+noclothes (plr)
+
+fling (plr)
+
+banlands (plr)
+
+void (plr)
+
+bang (plr) / unbang
+
+antivoid / unantivoid
+
+kill (plr)
+
+loopkill (plr) / unloopkill
+
+kidnap (plr)
+
+slowkill2 (plr)
+
+rocket (plr)
+
+bring (plr)
+
+tweenbring (plr)
+
+fasttweenbring (plr)
+
+forceheart (plr) / unforceheart
+
+givestick (plr)
+
+dupewand (num)
+
+heartname
+
+car
+
+funnysign
+
+soft
+
+hard
+
+funnysignv2
+
+furrynamechanger / unfurrynamechanger
+
+afk / unafk
+
+removeclothes
+
+seat
+
+autounsit / unautounsit
+
+spamcolor / unspamcolor
+
+skintone (white/black)
+
+fairywand
+
+heart
+
+turkeyfling (plr)
+
+turkeyvoid (plr) and more!</p>
+        </div>
+        
+        <!-- Game 2 -->
+        <div class="game-item">
+          <img src="https://tr.rbxcdn.com/180DAY-c99feeb66c0f37382c4629af4988dd8b/768/432/Image/Webp/noFilter" alt="Adopt and raise" class="game-image">
+          <h4 class="game-title">Adopt and raise a  baby</h4>
+          <p class="game-desc">givemoney (num)
+
+setmoney (num)
+
+banlands (plr)
+
+fling (plr)
+
+tp (plr1) (plr2)
+
+bald (plr)
+
+black (plr)
+
+white (plr)
+
+rainbowstrol / unrainbowstrol
+
+bring (plr)
+
+rocket (plr)
+
+void (plr)</p>
+        </div>
+        
+        <!-- Game 3 -->
+        <div class="game-item">
+          <img src="https://tr.rbxcdn.com/180DAY-b66f7c434cbf1c28a2b9615a85d31617/768/432/Image/Webp/noFilter" alt="Rays mod" class="game-image">
+          <h4 class="game-title">Rays mod</h4>
+          <p class="game-desc">lockserver / unlockserver
+
+size (num)
+
+bighead
+
+paper
+
+headless
+
+fat
+
+tall
+
+banlands (plr)
+
+hp (num)
+
+loopkill (plr) / unloopkill (plr)
+
+rocket (plr)
+
+void (plr)
+
+loopbring (plr) / unloopbring (plr)
+
+fling (plr)
+
+ban (plr)
+
+freeze (plr) / unfreeze (plr)
+
+kill (plr)
+
+bring (plr)
+
+claim (plr)
+
+kick (plr)
+
+pumpking</p>
+        </div>
+        
+        <!-- Game 4 -->
+        <div class="game-item">
+          <img src="https://tr.rbxcdn.com/180DAY-f7d0aab57201dc129265a52f0ea44e4b/768/432/Image/Webp/noFilter" alt="Another adopt game" class="game-image">
+          <h4 class="game-title">Another adopt game</h4>
+          <p class="game-desc">tp (plr1) (plr2)
+
+dupestroller (num)
+
+ghost / unghost
+
+white (plr)
+
+black (plr)
+
+bald (plr)
+
+noclothes (plr)
+
+fling (plr)
+
+banlands (plr)
+
+void (plr)
+
+antivoid / unantivoid
+
+rocket (plr)
+
+bring (plr)
+
+tweenbring (plr)
+
+fasttweenbring (plr)
+
+afk / unafk
+
+removeclothes -- You know the drill.. need a good FTI
+
+seat
+
+autounsit / unautounsit</p>
+        </div>
+        
+        <!-- Game 5 -->
+        <div class="game-item">
+          <img src="https://tr.rbxcdn.com/180DAY-732090d3aca1c3b133a4412cd587a3c0/768/432/Image/Webp/noFilter" alt="Adopt A Kid" class="game-image">
+          <h4 class="game-title">Adopt A Kid</h4>
+          <p class="game-desc">givemoney (num)
+
+setmoney (num)
+
+banlands (plr)
+
+fling (plr)
+
+tp (plr1) (plr2)
+
+bald (plr)
+
+black (plr)
+
+white (plr)
+
+bring (plr)
+
+rocket (plr)
+
+void (plr)</p>
+        </div>
+        
+        <!-- Game 6 -->
+        <div class="game-item">
+          <img src="https://tr.rbxcdn.com/180DAY-1ec5f77e4ac9e65ed0f19500a262e9c0/768/432/Image/Webp/noFilter" alt="🍕Work at a Pizza Place" class="game-image">
+          <h4 class="game-title">🍕Work at a Pizza Place</h4>
+          <p class="game-desc">island (plr)
+
+kill (plr)
+
+bring (plr)
+
+skydive (plr)
+
+becomemanager
+
+kick (plr)
+
+resetvotes
+
+banlands (plr)
+            
+and more!</p>
+        </div>
+        
+        <!-- Game 7 -->
+        <div class="game-item">
+          <img src="https://tr.rbxcdn.com/180DAY-e1d569ad08c23e48d8744ecc2ce29337/768/432/Image/Webp/noFilter" alt="Zombie merge tycoon" class="game-image">
+          <h4 class="game-title">Zombie merge tycoon</h4>
+          <p class="game-desc">pickupmoney
+
+getsamples
+
+sellsamples
+
+killboss
+
+kill (plr)
+
+loopkill (plr) / unloopkill (plr)
+
+killeverything
+
+killzombies</p>
+        </div>
+        
+        <!-- Game 8 -->
+        <div class="game-item">
+          <img src="https://tr.rbxcdn.com/180DAY-f5895d0999df93c16bc86233d32b3da0/768/432/Image/Webp/noFilter" alt="👨‍👩‍👧‍👦Live Life Rich and Famous in Paradise!
+" class="game-image">
+          <h4 class="game-title">👨‍👩‍👧‍👦Live Life Rich and Famous in Paradise!
+</h4>
+          <p class="game-desc">kill (plr)
+
+nobaseplate
+
+kick (plr)
+
+shutdown
+
+btools
+
+drophats (num)
+
+clone (plr)
+
+korblox (plr)
+
+cripple (plr)
+
+nohum (plr)
+
+nolegs (plr)
+
+noarms (plr)
+
+nolimbs (plr)
+
+bald (plr)
+
+noclothes (plr)
+
+gear (id)</p>
+        </div>
+        
+        <!-- Game 9 -->
+        <div class="game-item">
+          <img src="https://tr.rbxcdn.com/180DAY-6cecac7c1311aba0e0c0241d1adc8b58/768/432/Image/Webp/noFilter" alt="SharkBite 2 🦈
+" class="game-image">
+          <h4 class="game-title">SharkBite 2 🦈
+</h4>
+          <p class="game-desc">sharkcharms
+
+boatgui
+
+killall -- for when your shark
+
+decreaselag
+
+day
+
+night
+
+autofarm / autofarmoff
+
+esp
+
+nofog
+
+lobby
+
+sharktunnel
+
+island1
+
+island2
+
+bigisland
+
+cargo
+
+safeafk
+
+uselessoxygen
+
+nomines
+
+refreshsharkchance
+
+refreshhealth
+
+godmode
+
+fakeadmin</p>
+        </div>
+        
+        <!-- Game 10 -->
+        <div class="game-item">
+          <img src="https://tr.rbxcdn.com/180DAY-319e43376ca0c17efc84d0ee45dd274f/768/432/Image/Webp/noFilter" alt="kat" class="game-image">
+          <h4 class="game-title">kat</h4>
+          <p class="game-desc">goto (plr)
+
+disarm (plr)
+
+playsong (id)
+
+GunMods -- Executor Must Support GetGc</p>
+        </div>
+        
+
+        
+        <!-- Game 12 -->
+        <div class="game-item">
+          <img src="https://tr.rbxcdn.com/180DAY-1ff692ab54a30b14d3f0939625afc432/768/432/Image/Webp/noFilter" alt="Brookhaven 🏡RP
+" class="game-image">
+          <h4 class="game-title">Brookhaven 🏡RP
+</h4>
+          <p class="game-desc">void (plr)
+
+deathvoid (plr)
+
+bring (plr)
+
+deathbring (plr)
+
+banlands (plr)
+
+deathbanlands (plr)
+
+skydive (plr)
+
+deathskydive (plr)
+
+rocket (plr)
+
+fling (plr)
+
+jail (plr)
+
+deathjail (plr)
+
+tp (plr) (plr2)
+
+deathtp (plr) (plr2)
+          
+  and more!</p>
+        </div>
+        
+        <!-- Game 13 -->
+        <div class="game-item">
+          <img src="https://tr.rbxcdn.com/180DAY-3c69710523b585b62f53aa0d4c6c32ed/768/432/Image/Webp/noFilter" alt="Prison Life
+" class="game-image">
+          <h4 class="game-title">Prison Life
+</h4>
+          <p class="game-desc">superpunch
+
+taserbypass
+
+arrestall
+
+escape
+
+nocards
+
+killaura
+
+prison
+
+yard
+
+crimbase
+
+rainbowguns
+
+grabknife
+
+jeff</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery Model -->
+  <div class="modal" id="gallery-modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2 class="modal-title">Plasma in Action</h2>
+      <div class="image-gallery">
+        <div class="gallery-item">
+          <img src="https://media.discordapp.net/attachments/1241569387790602241/1352717232278470747/image.png?ex=67e8ead8&is=67e79958&hm=ee36db02ad93e99ae3138b594f0b20f8fcfdeef83707feffa20ccd4110c6fcc7&=&format=webp&quality=lossless&width=414&height=570" alt="">
+        </div>
+        <div class="gallery-item">
+          <img src="https://cdn.discordapp.com/attachments/1241569387790602241/1342950914536767508/image.png?ex=67e8fbc0&is=67e7aa40&hm=0d0ea177f36b45f140d87528bb475c0043e3afedc63ab3181b0f549e676e0aa8&" alt="">
+        </div>
+        <div class="gallery-item">
+          <img src="https://media.discordapp.net/attachments/1241569387790602241/1307372720773795840/Screenshot_20241116_094825_Roblox.jpg?ex=67e968ba&is=67e8173a&hm=570678b4007ec3a53f129ed3cc76dc5f953658cc39e3bba4791c72167068dc9c&=&format=webp&width=1805&height=810" alt="">
+        </div>
+        <div class="gallery-item">
+          <img src="https://media.discordapp.net/attachments/1241569387790602241/1318095170360578198/Screenshot_20241215_235909_Roblox.jpg?ex=67e8ddc9&is=67e78c49&hm=c296a4a33004436b6706c6cfcd26b66ea1153c3ec7995783fe0c0e1628a9f26a&=&format=webp&width=1805&height=810" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
   <script>
-    document.querySelector('.loadstring').addEventListener('click', function() {
-      this.select();
-      document.execCommand('copy');
-      alert('copied to clipboard!');
+    document.addEventListener('DOMContentLoaded', function() {
+      // Enhanced intro animation timing
+      setTimeout(function() {
+        document.querySelector('.intro').style.display = 'none';
+      }, 5000); // Matches the fadeOut animation duration
+
+      // Copy functionality
+      const copyBtn = document.getElementById('copyBtn');
+      const loadstring = document.querySelector('.loadstring');
+      const toast = document.getElementById('toast');
+      
+      if (copyBtn && loadstring) {
+        copyBtn.addEventListener('click', function() {
+          try {
+            loadstring.select();
+            document.execCommand('copy');
+            
+            // Show toast
+            if (toast) {
+              toast.classList.add('show');
+              setTimeout(() => {
+                toast.classList.remove('show');
+              }, 2000);
+            }
+          } catch (err) {
+            console.error('Failed to copy text: ', err);
+          }
+        });
+      }
+      
+      // Hide header on scroll down
+      let lastScroll = 0;
+      const header = document.getElementById('main-header');
+      
+      window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+          header.classList.remove('hidden');
+          return;
+        }
+        
+        if (currentScroll > lastScroll && !header.classList.contains('hidden')) {
+          // Scroll down
+          header.classList.add('hidden');
+        } else if (currentScroll < lastScroll && header.classList.contains('hidden')) {
+          // Scroll up
+          header.classList.remove('hidden');
+        }
+        
+        lastScroll = currentScroll;
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Modal functionality
+      const featuresBtn = document.getElementById('features-btn');
+      const commandsBtn = document.getElementById('commands-btn');
+      const galleryBtn = document.getElementById('gallery-btn');
+      const featuresFooterBtn = document.getElementById('features-footer-btn');
+      const commandsFooterBtn = document.getElementById('commands-footer-btn');
+      const galleryFooterBtn = document.getElementById('gallery-footer-btn');
+      
+      const featuresModal = document.getElementById('features-modal');
+      const commandsModal = document.getElementById('commands-modal');
+      const galleryModal = document.getElementById('gallery-modal');
+      
+      const closeButtons = document.querySelectorAll('.close-modal');
+      
+      // Function to open modal and set active nav link
+      function openModal(modal, btn) {
+        // Close all modals
+        document.querySelectorAll('.modal').forEach(m => m.classList.remove('show'));
+        document.body.style.overflow = 'auto';
+        
+        // Remove active class from all nav links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.classList.remove('active');
+        });
+        
+        // Open selected modal
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        
+        // Add active class to clicked button
+        if (btn) {
+          btn.classList.add('active');
+        }
+      }
+      
+      // Features button click
+      if (featuresBtn) {
+        featuresBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          openModal(featuresModal, this);
+        });
+      }
+      
+      // Commands button click
+      if (commandsBtn) {
+        commandsBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          openModal(commandsModal, this);
+        });
+      }
+      
+      // Gallery button click
+      if (galleryBtn) {
+        galleryBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          openModal(galleryModal, this);
+        });
+      }
+      
+      // Footer buttons
+      if (featuresFooterBtn) {
+        featuresFooterBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          openModal(featuresModal, featuresBtn);
+        });
+      }
+      
+      if (commandsFooterBtn) {
+        commandsFooterBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          openModal(commandsModal, commandsBtn);
+        });
+      }
+      
+      if (galleryFooterBtn) {
+        galleryFooterBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          openModal(galleryModal, galleryBtn);
+        });
+      }
+      
+      // Close modal buttons
+      closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          document.querySelectorAll('.modal').forEach(modal => {
+            modal.classList.remove('show');
+          });
+          document.body.style.overflow = 'auto';
+        });
+      });
+      
+      // Close modal when clicking outside
+      window.addEventListener('click', function(e) {
+        if (e.target.classList.contains('modal')) {
+          document.querySelectorAll('.modal').forEach(modal => {
+            modal.classList.remove('show');
+          });
+          document.body.style.overflow = 'auto';
+        }
+      });
     });
   </script>
 </body>
