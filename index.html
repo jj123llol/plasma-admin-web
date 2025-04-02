@@ -131,7 +131,7 @@
       justify-content: center;
       align-items: center;
       z-index: 2000;
-      animation: fadeOut 1.5s ease-in-out 3.5s forwards;
+      animation: fadeOut 1s ease-in-out 3s forwards;
     }
 
     .intro-content {
@@ -139,7 +139,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      animation: slideIn 1s ease-out forwards;
+      transform: translateY(-50px);
+      opacity: 0;
+      animation: 
+        slideIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards,
+        float 4s ease-in-out 1s infinite;
     }
 
     .intro-logo {
@@ -148,32 +152,60 @@
       border-radius: 50%;
       object-fit: cover;
       border: 5px solid var(--primary-color);
-      box-shadow: 0 0 50px rgba(94, 92, 230, 0.7);
+      box-shadow: 
+        0 0 20px rgba(94, 92, 230, 0.5),
+        0 0 40px rgba(94, 92, 230, 0.3),
+        0 0 80px rgba(94, 92, 230, 0.2);
+      transform: scale(0.8);
+      opacity: 0;
       animation: 
-        bounce 0.5s ease-in-out 1s 3 alternate;
+        logoAppear 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+        pulse 2s ease-in-out infinite alternate;
+      filter: brightness(1.1) contrast(1.1);
     }
 
     .intro-text {
       font-size: 3rem;
       font-weight: 700;
       margin-top: 2rem;
-      background: linear-gradient(90deg, #5E5CE6, #FF375F);
+      background: linear-gradient(90deg, #5E5CE6, #FF375F, #FF9E5E);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       opacity: 0;
+      text-align: center;
+      line-height: 1.2;
       animation: 
-        fadeIn 0.5s ease-out 1.5s forwards,
+        textAppear 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s forwards,
         glow 2s ease-in-out infinite alternate;
     }
 
+    .intro-subtext {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      opacity: 0;
+      animation: 
+        fadeIn 0.8s ease-out 0.8s forwards;
+    }
+
     @keyframes slideIn {
-      from { transform: translateY(-100px); opacity: 0; }
+      from { transform: translateY(-50px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
 
-    @keyframes bounce {
+    @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-30px); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes logoAppear {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes textAppear {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     @keyframes fadeIn {
@@ -189,6 +221,12 @@
     @keyframes glow {
       from { text-shadow: 0 0 10px rgba(94, 92, 230, 0.7); }
       to { text-shadow: 0 0 20px rgba(94, 92, 230, 0.9), 0 0 30px rgba(255, 55, 95, 0.7); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 20px rgba(94, 92, 230, 0.5), 0 0 40px rgba(94, 92, 230, 0.3), 0 0 80px rgba(94, 92, 230, 0.2); }
+      50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(94, 92, 230, 0.6), 0 0 60px rgba(94, 92, 230, 0.4), 0 0 100px rgba(94, 92, 230, 0.3); }
+      100% { transform: scale(1); box-shadow: 0 0 20px rgba(94, 92, 230, 0.5), 0 0 40px rgba(94, 92, 230, 0.3), 0 0 80px rgba(94, 92, 230, 0.2); }
     }
 
     .hero {
@@ -648,6 +686,14 @@
       .hero {
         padding-top: 8rem;
       }
+      
+      .intro-text {
+        font-size: 2rem;
+      }
+      
+      .intro-subtext {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -656,7 +702,8 @@
   <div class="intro">
     <div class="intro-content">
       <img src="https://raw.githubusercontent.com/jj123llol/plasma-admin-web/refs/heads/main/image-265.png" alt="Plasma Logo" class="intro-logo">
-      <div class="intro-text">PLASMA ADMIN Site Made By Kosovo</div>
+      <div class="intro-text">PLASMA ADMIN</div>
+      <div class="intro-subtext">Advanced Roblox Admin Script</div>
     </div>
   </div>
 
@@ -667,7 +714,7 @@
         <span class="logo-text">Plasma Admin</span>
       </div>
       <div class="nav-links">
-        <a href="#" id="features-btn" class="active"><i class="fas fa-star"></i> Features</a>
+        <a href="#" id="features-btn"><i class="fas fa-star"></i> Features</a>
         <a href="#" id="commands-btn"><i class="fas fa-gamepad"></i> Game Commands</a>
         <a href="#" id="gallery-btn"><i class="fas fa-images"></i> Gallery</a>
         <a href="https://discord.gg/XPgzdFZtYw" target="_blank"><i class="fab fa-discord"></i> Discord</a>
@@ -1296,7 +1343,7 @@ jeff</p>
       // Enhanced intro animation timing
       setTimeout(function() {
         document.querySelector('.intro').style.display = 'none';
-      }, 5000); // Matches the fadeOut animation duration
+      }, 4000); // Matches the fadeOut animation duration
 
       // Copy functionality
       const copyBtn = document.getElementById('copyBtn');
@@ -1447,6 +1494,11 @@ jeff</p>
             modal.classList.remove('show');
           });
           document.body.style.overflow = 'auto';
+          
+          // Remove active class from all nav links when closing modal
+          document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active');
+          });
         });
       });
       
@@ -1457,6 +1509,11 @@ jeff</p>
             modal.classList.remove('show');
           });
           document.body.style.overflow = 'auto';
+          
+          // Remove active class from all nav links when closing modal
+          document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active');
+          });
         }
       });
     });
