@@ -79,3 +79,24 @@ example:
 get_settings_table('cmdbar_color', "color3") -- color3 could also be vector3
 ```
 would return Color3.fromRGB of the table cmdbar_color
+
+
+# Adding settings
+
+## adding a setting manually
+
+open the "Plasma.Settings" file and add to it.
+
+## via script
+
+```lua
+plasmaadmin['settings']['setting'] = value
+update_settings()
+```
+
+example:
+
+```lua
+plasmaadmin['settings']['speed'] = 7546456453243436578
+update_settings()
+```
