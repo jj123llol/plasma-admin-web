@@ -23,7 +23,7 @@ update_settings()
 
 # Using settings in a plugin.
 
-if you are a plguin developer you are able to store settings within Plasma Admin's settings file.
+if you are a plugin developer you are able to store settings within Plasma Admin's settings file.
 
 
 ## update_settings function
