@@ -6,8 +6,10 @@ You can share these files among friends or with the server to share your setting
 
 # How to change settings?
 
+## manually
 You can open the "Plasma.Settings" file with notepad, or any text editor and manually change the settings from there.
 
+## via script
 You can also edit the file via a script, after the loadstring you can do
 ```lua
 plasmaadmin['settings']['setting'] = value
