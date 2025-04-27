@@ -46,7 +46,27 @@ which would set the cmdbar_color value to {0, 0, 0}
 ## delitem_settings_table function
 
 
-the delitem_settings_table function deletes a value from a table, this will be added to later.
+the delitem_settings_table function deletes a value from a table.
+
+lets say you have a setting called "test table" that looks like this
+```lua
+['test_table'] = {
+    ['bleh'] = "value",
+    ['blez'] = "value"
+}
+```
+you could do
+
+```lua
+delitem_settings_table('test_table', 'bleh')
+```
+and it would turn the table into this:
+
+```lua
+['test_table'] = {
+    ['blez'] = "value"
+}
+```
 
 
 ## get_settings_table function
