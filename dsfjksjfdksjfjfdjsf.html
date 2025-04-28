@@ -1,0 +1,800 @@
+<div class="preview-element border-4 bg-neutral-100 overflow-hidden flex-shrink-0 text-carbon-800 w-[1440px] max-w-[1440px] min-w-[1440px] min-h-[1024px]  
+          h-full flex flex-col mt-4 rounded-[6px] font-[Inter] mx-auto  
+          border-carbon-300
+          " style="height: 7466px;"><iframe title="wireframe-0" frameborder="0" class="overflow-hidden" style="height: 7466px; width: 100%; overflow: hidden; z-index: 10;" srcdoc="
+            <html class=&quot;&quot;>
+              
+<head>
+    <link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&amp;display=swap&quot; rel=&quot;stylesheet&quot;>
+    
+  <script src=&quot;https://cdn.jsdelivr.net/npm/apexcharts&quot;></script>
+  <script src=&quot;https://cdn.tailwindcss.com&quot;></script>
+  <script>
+      window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest', // Options: 'nest', 'remove', 'replace'
+      };
+  </script>
+  <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js&quot; crossorigin=&quot;anonymous&quot; referrerpolicy=&quot;no-referrer&quot;></script>
+
+    
+<style>
+  * {
+    font-family: &quot;Inter&quot;, sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+    
+<style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+</style>
+
+    
+<style>
+   :root {
+          /* Base colors */
+          --color-base: #ffffff;
+          --color-base-50: #f9fafb;
+          --color-base-100: #f3f4f6;
+          --color-base-200: #e5e7eb;
+          --color-base-300: #d1d5db;
+          --color-base-400: #9ca3af;
+          --color-base-500: #6b7280;
+          --color-base-600: #4b5563;  
+          --color-base-700: #374151;
+          --color-base-800: #1f2937;  
+          --color-base-900: #111827;
+          --color-base-content: #1f2937;
+
+          /* Primary colors */
+          --color-primary: #3b82f6;
+          --color-primary-50: #eff6ff;
+          --color-primary-100: #dbeafe;
+          --color-primary-200: #bfdbfe;
+          --color-primary-300: #93c5fd;
+          --color-primary-400: #60a5fa;
+          --color-primary-500: #3b82f6;
+          --color-primary-600: #2563eb;
+          --color-primary-700: #1d4ed8;
+          --color-primary-800: #1e40af;
+          --color-primary-900: #1e3a8a;
+          --color-primary-focus: #2563eb;
+          --color-primary-content: #ffffff;
+
+          /* Secondary colors */
+          --color-secondary: #8b5cf6;
+          --color-secondary-50: #f5f3ff;
+          --color-secondary-100: #ede9fe;
+          --color-secondary-200: #ddd6fe;
+          --color-secondary-300: #c4b5fd;
+          --color-secondary-400: #a78bfa;
+          --color-secondary-500: #8b5cf6;
+          --color-secondary-600: #7c3aed;
+          --color-secondary-700: #6d28d9;
+          --color-secondary-800: #5b21b6;
+          --color-secondary-900: #4c1d95;
+          --color-secondary-focus: #7c3aed;
+          --color-secondary-content: #ffffff;
+
+          /* Accent colors */
+          --color-accent: #f472b6;
+          --color-accent-50: #fdf2f8;
+          --color-accent-100: #fce7f3;
+          --color-accent-200: #fbcfe8;
+          --color-accent-300: #f9a8d4;
+          --color-accent-400: #f472b6;
+          --color-accent-500: #ec4899;
+          --color-accent-600: #db2777;
+          --color-accent-700: #be185d;
+          --color-accent-800: #9d174d;
+          --color-accent-900: #831843;
+          --color-accent-focus: #db2777;
+          --color-accent-content: #ffffff;
+
+          /* Neutral colors */
+          --color-neutral: #6b7280;
+          --color-neutral-50: #f9fafb;
+          --color-neutral-100: #f3f4f6;
+          --color-neutral-200: #e5e7eb;
+          --color-neutral-300: #d1d5db;
+          --color-neutral-400: #9ca3af;
+          --color-neutral-500: #6b7280;
+          --color-neutral-600: #4b5563;
+          --color-neutral-700: #374151;
+          --color-neutral-800: #1f2937;
+          --color-neutral-900: #111827;
+          --color-neutral-focus: #4b5563;
+          --color-neutral-content: #ffffff;
+
+          /* Info colors */
+          --color-info: #3b82f6;
+          --color-info-50: #eff6ff;
+          --color-info-100: #dbeafe;
+          --color-info-200: #bfdbfe;
+          --color-info-300: #93c5fd;
+          --color-info-400: #60a5fa;
+          --color-info-500: #3b82f6;
+          --color-info-600: #2563eb;
+          --color-info-700: #1d4ed8;
+          --color-info-800: #1e40af;
+          --color-info-900: #1e3a8a;
+          --color-info-focus: #2563eb;
+          --color-info-content: #ffffff;
+
+          /* Success colors */
+          --color-success: #10b981;
+          --color-success-50: #ecfdf5;
+          --color-success-100: #d1fae5;
+          --color-success-200: #a7f3d0;
+          --color-success-300: #6ee7b7;
+          --color-success-400: #34d399;
+          --color-success-500: #10b981;
+          --color-success-600: #059669;
+          --color-success-700: #047857;
+          --color-success-800: #065f46;
+          --color-success-900: #064e3b;
+          --color-success-focus: #059669;
+          --color-success-content: #ffffff;
+
+          /* Warning colors */
+          --color-warning: #f59e0b;
+          --color-warning-50: #fffbeb;
+          --color-warning-100: #fef3c7;
+          --color-warning-200: #fde68a;
+          --color-warning-300: #fcd34d;
+          --color-warning-400: #fbbf24;
+          --color-warning-500: #f59e0b;
+          --color-warning-600: #d97706;
+          --color-warning-700: #b45309;
+          --color-warning-800: #92400e;
+          --color-warning-900: #78350f;
+          --color-warning-focus: #d97706;
+          --color-warning-content: #ffffff;
+
+          /* Error colors */
+          --color-error: #ef4444;
+          --color-error-50: #fef2f2;
+          --color-error-100: #fee2e2;
+          --color-error-200: #fecaca;
+          --color-error-300: #fca5a5;
+          --color-error-400: #f87171;
+          --color-error-500: #ef4444;
+          --color-error-600: #dc2626;
+          --color-error-700: #b91c1c;
+          --color-error-800: #991b1b;
+          --color-error-900: #7f1d1d;
+          --color-error-focus: #dc2626;
+          --color-error-content: #ffffff;
+        }
+</style>
+
+    
+<style>
+/* Dark theme */
+        .dark {
+          /* Base colors */
+          --color-base: #1f2937;
+          --color-base-50: #111827;
+          --color-base-100: #1f2937;
+          --color-base-200: #374151;
+          --color-base-300: #4b5563;
+          --color-base-400: #6b7280;
+          --color-base-500: #9ca3af;
+          --color-base-600: #d1d5db;
+          --color-base-700: #e5e7eb;
+          --color-base-800: #f3f4f6;
+          --color-base-900: #f9fafb;
+          --color-base-content: #f9fafb;
+
+          /* Primary colors */
+          --color-primary: #60a5fa;
+          --color-primary-50: #1e3a8a;
+          --color-primary-100: #1e40af;
+          --color-primary-200: #1d4ed8;
+          --color-primary-300: #2563eb;
+          --color-primary-400: #3b82f6;
+          --color-primary-500: #60a5fa;
+          --color-primary-600: #93c5fd;
+          --color-primary-700: #bfdbfe;
+          --color-primary-800: #dbeafe;
+          --color-primary-900: #eff6ff;
+          --color-primary-focus: #3b82f6;
+          --color-primary-content: #1f2937;
+
+          /* Secondary colors */
+          --color-secondary: #a78bfa;
+          --color-secondary-50: #4c1d95;
+          --color-secondary-100: #5b21b6;
+          --color-secondary-200: #6d28d9;
+          --color-secondary-300: #7c3aed;
+          --color-secondary-400: #8b5cf6;
+          --color-secondary-500: #a78bfa;
+          --color-secondary-600: #c4b5fd;
+          --color-secondary-700: #ddd6fe;
+          --color-secondary-800: #ede9fe;
+          --color-secondary-900: #f5f3ff;
+          --color-secondary-focus: #8b5cf6;
+          --color-secondary-content: #1f2937;
+
+          /* Accent colors */
+          --color-accent: #f472b6;
+          --color-accent-50: #831843;
+          --color-accent-100: #9d174d;
+          --color-accent-200: #be185d;
+          --color-accent-300: #db2777;
+          --color-accent-400: #ec4899;
+          --color-accent-500: #f472b6;
+          --color-accent-600: #f9a8d4;
+          --color-accent-700: #fbcfe8;
+          --color-accent-800: #fce7f3;
+          --color-accent-900: #fdf2f8;
+          --color-accent-focus: #ec4899;
+          --color-accent-content: #1f2937;
+
+          /* Neutral colors remain the same as light theme */
+
+          /* Info colors */
+          --color-info: #60a5fa;
+          --color-info-50: #1e3a8a;
+          --color-info-100: #1e40af;
+          --color-info-200: #1d4ed8;
+          --color-info-300: #2563eb;
+          --color-info-400: #3b82f6;
+          --color-info-500: #60a5fa;
+          --color-info-600: #93c5fd;
+          --color-info-700: #bfdbfe;
+          --color-info-800: #dbeafe;
+          --color-info-900: #eff6ff;
+          --color-info-focus: #3b82f6;
+          --color-info-content: #1f2937;
+
+          /* Success colors */
+          --color-success: #34d399;
+          --color-success-50: #064e3b;
+          --color-success-100: #065f46;
+          --color-success-200: #047857;
+          --color-success-300: #059669;
+          --color-success-400: #10b981;
+          --color-success-500: #34d399;
+          --color-success-600: #6ee7b7;
+          --color-success-700: #a7f3d0;
+          --color-success-800: #d1fae5;
+          --color-success-900: #ecfdf5;
+          --color-success-focus: #10b981;
+          --color-success-content: #1f2937;
+
+          /* Warning colors */
+          --color-warning: #fbbf24;
+          --color-warning-50: #78350f;
+          --color-warning-100: #92400e;
+          --color-warning-200: #b45309;
+          --color-warning-300: #d97706;
+          --color-warning-400: #f59e0b;
+          --color-warning-500: #fbbf24;
+          --color-warning-600: #fcd34d;
+          --color-warning-700: #fde68a;
+          --color-warning-800: #fef3c7;
+          --color-warning-900: #fffbeb;
+          --color-warning-focus: #f59e0b;
+          --color-warning-content: #1f2937;
+
+          /* Error colors */
+          --color-error: #f87171;
+          --color-error-50: #7f1d1d;
+          --color-error-100: #991b1b;
+          --color-error-200: #b91c1c;
+          --color-error-300: #dc2626;
+          --color-error-400: #ef4444;
+          --color-error-500: #f87171;
+          --color-error-600: #fca5a5;
+          --color-error-700: #fecaca;
+          --color-error-800: #fee2e2;
+          --color-error-900: #fef2f2;
+          --color-error-focus: #ef4444;
+          --color-error-content: #1f2937;
+        }
+</style>
+
+    
+  <script>
+        tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                ...{&quot;transparent&quot;:&quot;transparent&quot;,&quot;current&quot;:&quot;currentColor&quot;,&quot;black&quot;:&quot;#000000&quot;,&quot;white&quot;:&quot;#ffffff&quot;,&quot;gray&quot;:{&quot;50&quot;:&quot;#f9fafb&quot;,&quot;100&quot;:&quot;#f3f4f6&quot;,&quot;200&quot;:&quot;#e5e7eb&quot;,&quot;300&quot;:&quot;#d1d5db&quot;,&quot;400&quot;:&quot;#9ca3af&quot;,&quot;500&quot;:&quot;#6b7280&quot;,&quot;600&quot;:&quot;#4b5563&quot;,&quot;700&quot;:&quot;#374151&quot;,&quot;800&quot;:&quot;#1f2937&quot;,&quot;900&quot;:&quot;#111827&quot;},&quot;red&quot;:{&quot;50&quot;:&quot;#fef2f2&quot;,&quot;100&quot;:&quot;#fee2e2&quot;,&quot;200&quot;:&quot;#fecaca&quot;,&quot;300&quot;:&quot;#fca5a5&quot;,&quot;400&quot;:&quot;#f87171&quot;,&quot;500&quot;:&quot;#ef4444&quot;,&quot;600&quot;:&quot;#dc2626&quot;,&quot;700&quot;:&quot;#b91c1c&quot;,&quot;800&quot;:&quot;#991b1b&quot;,&quot;900&quot;:&quot;#7f1d1d&quot;},&quot;yellow&quot;:{&quot;50&quot;:&quot;#fffbeb&quot;,&quot;100&quot;:&quot;#fef3c7&quot;,&quot;200&quot;:&quot;#fde68a&quot;,&quot;300&quot;:&quot;#fcd34d&quot;,&quot;400&quot;:&quot;#fbbf24&quot;,&quot;500&quot;:&quot;#f59e0b&quot;,&quot;600&quot;:&quot;#d97706&quot;,&quot;700&quot;:&quot;#b45309&quot;,&quot;800&quot;:&quot;#92400e&quot;,&quot;900&quot;:&quot;#78350f&quot;},&quot;green&quot;:{&quot;50&quot;:&quot;#ecfdf5&quot;,&quot;100&quot;:&quot;#d1fae5&quot;,&quot;200&quot;:&quot;#a7f3d0&quot;,&quot;300&quot;:&quot;#6ee7b7&quot;,&quot;400&quot;:&quot;#34d399&quot;,&quot;500&quot;:&quot;#10b981&quot;,&quot;600&quot;:&quot;#059669&quot;,&quot;700&quot;:&quot;#047857&quot;,&quot;800&quot;:&quot;#065f46&quot;,&quot;900&quot;:&quot;#064e3b&quot;},&quot;blue&quot;:{&quot;50&quot;:&quot;#eff6ff&quot;,&quot;100&quot;:&quot;#dbeafe&quot;,&quot;200&quot;:&quot;#bfdbfe&quot;,&quot;300&quot;:&quot;#93c5fd&quot;,&quot;400&quot;:&quot;#60a5fa&quot;,&quot;500&quot;:&quot;#3b82f6&quot;,&quot;600&quot;:&quot;#2563eb&quot;,&quot;700&quot;:&quot;#1d4ed8&quot;,&quot;800&quot;:&quot;#1e40af&quot;,&quot;900&quot;:&quot;#1e3a8a&quot;},&quot;indigo&quot;:{&quot;50&quot;:&quot;#eef2ff&quot;,&quot;100&quot;:&quot;#e0e7ff&quot;,&quot;200&quot;:&quot;#c7d2fe&quot;,&quot;300&quot;:&quot;#a5b4fc&quot;,&quot;400&quot;:&quot;#818cf8&quot;,&quot;500&quot;:&quot;#6366f1&quot;,&quot;600&quot;:&quot;#4f46e5&quot;,&quot;700&quot;:&quot;#4338ca&quot;,&quot;800&quot;:&quot;#3730a3&quot;,&quot;900&quot;:&quot;#312e81&quot;},&quot;purple&quot;:{&quot;50&quot;:&quot;#f5f3ff&quot;,&quot;100&quot;:&quot;#ede9fe&quot;,&quot;200&quot;:&quot;#ddd6fe&quot;,&quot;300&quot;:&quot;#c4b5fd&quot;,&quot;400&quot;:&quot;#a78bfa&quot;,&quot;500&quot;:&quot;#8b5cf6&quot;,&quot;600&quot;:&quot;#7c3aed&quot;,&quot;700&quot;:&quot;#6d28d9&quot;,&quot;800&quot;:&quot;#5b21b6&quot;,&quot;900&quot;:&quot;#4c1d95&quot;},&quot;pink&quot;:{&quot;50&quot;:&quot;#fdf2f8&quot;,&quot;100&quot;:&quot;#fce7f3&quot;,&quot;200&quot;:&quot;#fbcfe8&quot;,&quot;300&quot;:&quot;#f9a8d4&quot;,&quot;400&quot;:&quot;#f472b6&quot;,&quot;500&quot;:&quot;#ec4899&quot;,&quot;600&quot;:&quot;#db2777&quot;,&quot;700&quot;:&quot;#be185d&quot;,&quot;800&quot;:&quot;#9d174d&quot;,&quot;900&quot;:&quot;#831843&quot;}},
+                ...{&quot;primary&quot;:{&quot;50&quot;:&quot;var(--color-primary-50)&quot;,&quot;100&quot;:&quot;var(--color-primary-100)&quot;,&quot;200&quot;:&quot;var(--color-primary-200)&quot;,&quot;300&quot;:&quot;var(--color-primary-300)&quot;,&quot;400&quot;:&quot;var(--color-primary-400)&quot;,&quot;500&quot;:&quot;var(--color-primary-500)&quot;,&quot;600&quot;:&quot;var(--color-primary-600)&quot;,&quot;700&quot;:&quot;var(--color-primary-700)&quot;,&quot;800&quot;:&quot;var(--color-primary-800)&quot;,&quot;900&quot;:&quot;var(--color-primary-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-primary)&quot;,&quot;focus&quot;:&quot;var(--color-primary-focus)&quot;,&quot;content&quot;:&quot;var(--color-primary-content)&quot;},&quot;secondary&quot;:{&quot;50&quot;:&quot;var(--color-secondary-50)&quot;,&quot;100&quot;:&quot;var(--color-secondary-100)&quot;,&quot;200&quot;:&quot;var(--color-secondary-200)&quot;,&quot;300&quot;:&quot;var(--color-secondary-300)&quot;,&quot;400&quot;:&quot;var(--color-secondary-400)&quot;,&quot;500&quot;:&quot;var(--color-secondary-500)&quot;,&quot;600&quot;:&quot;var(--color-secondary-600)&quot;,&quot;700&quot;:&quot;var(--color-secondary-700)&quot;,&quot;800&quot;:&quot;var(--color-secondary-800)&quot;,&quot;900&quot;:&quot;var(--color-secondary-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-secondary)&quot;,&quot;focus&quot;:&quot;var(--color-secondary-focus)&quot;,&quot;content&quot;:&quot;var(--color-secondary-content)&quot;},&quot;accent&quot;:{&quot;50&quot;:&quot;var(--color-accent-50)&quot;,&quot;100&quot;:&quot;var(--color-accent-100)&quot;,&quot;200&quot;:&quot;var(--color-accent-200)&quot;,&quot;300&quot;:&quot;var(--color-accent-300)&quot;,&quot;400&quot;:&quot;var(--color-accent-400)&quot;,&quot;500&quot;:&quot;var(--color-accent-500)&quot;,&quot;600&quot;:&quot;var(--color-accent-600)&quot;,&quot;700&quot;:&quot;var(--color-accent-700)&quot;,&quot;800&quot;:&quot;var(--color-accent-800)&quot;,&quot;900&quot;:&quot;var(--color-accent-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-accent)&quot;,&quot;focus&quot;:&quot;var(--color-accent-focus)&quot;,&quot;content&quot;:&quot;var(--color-accent-content)&quot;},&quot;neutral&quot;:{&quot;50&quot;:&quot;var(--color-neutral-50)&quot;,&quot;100&quot;:&quot;var(--color-neutral-100)&quot;,&quot;200&quot;:&quot;var(--color-neutral-200)&quot;,&quot;300&quot;:&quot;var(--color-neutral-300)&quot;,&quot;400&quot;:&quot;var(--color-neutral-400)&quot;,&quot;500&quot;:&quot;var(--color-neutral-500)&quot;,&quot;600&quot;:&quot;var(--color-neutral-600)&quot;,&quot;700&quot;:&quot;var(--color-neutral-700)&quot;,&quot;800&quot;:&quot;var(--color-neutral-800)&quot;,&quot;900&quot;:&quot;var(--color-neutral-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-neutral)&quot;,&quot;focus&quot;:&quot;var(--color-neutral-focus)&quot;,&quot;content&quot;:&quot;var(--color-neutral-content)&quot;},&quot;info&quot;:{&quot;50&quot;:&quot;var(--color-info-50)&quot;,&quot;100&quot;:&quot;var(--color-info-100)&quot;,&quot;200&quot;:&quot;var(--color-info-200)&quot;,&quot;300&quot;:&quot;var(--color-info-300)&quot;,&quot;400&quot;:&quot;var(--color-info-400)&quot;,&quot;500&quot;:&quot;var(--color-info-500)&quot;,&quot;600&quot;:&quot;var(--color-info-600)&quot;,&quot;700&quot;:&quot;var(--color-info-700)&quot;,&quot;800&quot;:&quot;var(--color-info-800)&quot;,&quot;900&quot;:&quot;var(--color-info-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-info)&quot;,&quot;focus&quot;:&quot;var(--color-info-focus)&quot;,&quot;content&quot;:&quot;var(--color-info-content)&quot;},&quot;success&quot;:{&quot;50&quot;:&quot;var(--color-success-50)&quot;,&quot;100&quot;:&quot;var(--color-success-100)&quot;,&quot;200&quot;:&quot;var(--color-success-200)&quot;,&quot;300&quot;:&quot;var(--color-success-300)&quot;,&quot;400&quot;:&quot;var(--color-success-400)&quot;,&quot;500&quot;:&quot;var(--color-success-500)&quot;,&quot;600&quot;:&quot;var(--color-success-600)&quot;,&quot;700&quot;:&quot;var(--color-success-700)&quot;,&quot;800&quot;:&quot;var(--color-success-800)&quot;,&quot;900&quot;:&quot;var(--color-success-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-success)&quot;,&quot;focus&quot;:&quot;var(--color-success-focus)&quot;,&quot;content&quot;:&quot;var(--color-success-content)&quot;},&quot;warning&quot;:{&quot;50&quot;:&quot;var(--color-warning-50)&quot;,&quot;100&quot;:&quot;var(--color-warning-100)&quot;,&quot;200&quot;:&quot;var(--color-warning-200)&quot;,&quot;300&quot;:&quot;var(--color-warning-300)&quot;,&quot;400&quot;:&quot;var(--color-warning-400)&quot;,&quot;500&quot;:&quot;var(--color-warning-500)&quot;,&quot;600&quot;:&quot;var(--color-warning-600)&quot;,&quot;700&quot;:&quot;var(--color-warning-700)&quot;,&quot;800&quot;:&quot;var(--color-warning-800)&quot;,&quot;900&quot;:&quot;var(--color-warning-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-warning)&quot;,&quot;focus&quot;:&quot;var(--color-warning-focus)&quot;,&quot;content&quot;:&quot;var(--color-warning-content)&quot;},&quot;error&quot;:{&quot;50&quot;:&quot;var(--color-error-50)&quot;,&quot;100&quot;:&quot;var(--color-error-100)&quot;,&quot;200&quot;:&quot;var(--color-error-200)&quot;,&quot;300&quot;:&quot;var(--color-error-300)&quot;,&quot;400&quot;:&quot;var(--color-error-400)&quot;,&quot;500&quot;:&quot;var(--color-error-500)&quot;,&quot;600&quot;:&quot;var(--color-error-600)&quot;,&quot;700&quot;:&quot;var(--color-error-700)&quot;,&quot;800&quot;:&quot;var(--color-error-800)&quot;,&quot;900&quot;:&quot;var(--color-error-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-error)&quot;,&quot;focus&quot;:&quot;var(--color-error-focus)&quot;,&quot;content&quot;:&quot;var(--color-error-content)&quot;},&quot;danger&quot;:{&quot;50&quot;:&quot;var(--color-error-50)&quot;,&quot;100&quot;:&quot;var(--color-error-100)&quot;,&quot;200&quot;:&quot;var(--color-error-200)&quot;,&quot;300&quot;:&quot;var(--color-error-300)&quot;,&quot;400&quot;:&quot;var(--color-error-400)&quot;,&quot;500&quot;:&quot;var(--color-error-500)&quot;,&quot;600&quot;:&quot;var(--color-error-600)&quot;,&quot;700&quot;:&quot;var(--color-error-700)&quot;,&quot;800&quot;:&quot;var(--color-error-800)&quot;,&quot;900&quot;:&quot;var(--color-error-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-error)&quot;,&quot;focus&quot;:&quot;var(--color-error-focus)&quot;,&quot;content&quot;:&quot;var(--color-error-content)&quot;},&quot;failure&quot;:{&quot;50&quot;:&quot;var(--color-error-50)&quot;,&quot;100&quot;:&quot;var(--color-error-100)&quot;,&quot;200&quot;:&quot;var(--color-error-200)&quot;,&quot;300&quot;:&quot;var(--color-error-300)&quot;,&quot;400&quot;:&quot;var(--color-error-400)&quot;,&quot;500&quot;:&quot;var(--color-error-500)&quot;,&quot;600&quot;:&quot;var(--color-error-600)&quot;,&quot;700&quot;:&quot;var(--color-error-700)&quot;,&quot;800&quot;:&quot;var(--color-error-800)&quot;,&quot;900&quot;:&quot;var(--color-error-900)&quot;,&quot;DEFAULT&quot;:&quot;var(--color-error)&quot;,&quot;focus&quot;:&quot;var(--color-error-focus)&quot;,&quot;content&quot;:&quot;var(--color-error-content)&quot;}},
+                },
+              },
+            },
+            variants: {
+              extend: {
+                backgroundColor: ['active', 'group-hover'],
+                textColor: ['active', 'group-hover'],
+              },
+            },
+            plugins: [],
+          };
+  </script>
+
+</head>
+
+              <body class=&quot;h-full text-base-content&quot;>
+                <div id=&quot;documentation-website&quot; class=&quot;min-h-screen bg-gray-50&quot;>
+
+  <!-- Main Content -->
+  <div class=&quot;container mx-auto px-4 py-12&quot;>
+    <div class=&quot;flex flex-col lg:flex-row gap-8&quot;>
+      <!-- Sidebar Navigation -->
+      <aside id=&quot;sidebar&quot; class=&quot;lg:w-1/4 sticky top-24 h-fit&quot;>
+        <div class=&quot;bg-white rounded-lg shadow-md p-6&quot;>
+          <h3 class=&quot;text-lg font-bold text-gray-800 mb-4&quot;>Documentation</h3>
+          <nav>
+            <ul class=&quot;space-y-2&quot;>
+              <li>
+                <span class=&quot;flex items-center text-indigo-600 font-medium p-2 rounded-md bg-indigo-50 cursor-pointer&quot;>
+                  <i class=&quot;fa-solid fa-home w-5&quot;></i>
+                  <span>Introduction</span>
+                </span>
+              </li>
+              <li>
+                <span class=&quot;flex items-center text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 p-2 rounded-md transition cursor-pointer&quot;>
+                  <i class=&quot;fa-solid fa-puzzle-piece w-5&quot;></i>
+                  <span>Plugins</span>
+                </span>
+              </li>
+              <li>
+                <span class=&quot;flex items-center text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 p-2 rounded-md transition cursor-pointer&quot;>
+                  <i class=&quot;fa-solid fa-code w-5&quot;></i>
+                  <span>Making Plugins</span>
+                </span>
+              </li>
+              <li>
+                <span class=&quot;flex items-center text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 p-2 rounded-md transition cursor-pointer&quot;>
+                  <i class=&quot;fa-solid fa-terminal w-5&quot;></i>
+                  <span>Commands</span>
+                </span>
+              </li>
+              <li>
+                <span class=&quot;flex items-center text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 p-2 rounded-md transition cursor-pointer&quot;>
+                  <i class=&quot;fa-solid fa-bell w-5&quot;></i>
+                  <span>Notifications</span>
+                </span>
+              </li>
+              <li>
+                <span class=&quot;flex items-center text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 p-2 rounded-md transition cursor-pointer&quot;>
+                  <i class=&quot;fa-solid fa-gear w-5&quot;></i>
+                  <span>Settings</span>
+                </span>
+              </li>
+              <li>
+                <span class=&quot;flex items-center text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 p-2 rounded-md transition cursor-pointer&quot;>
+                  <i class=&quot;fa-solid fa-share-nodes w-5&quot;></i>
+                  <span>Sharing</span>
+                </span>
+              </li>
+            </ul>
+          </nav>
+          
+          <div class=&quot;mt-8 pt-6 border-t border-gray-200&quot;>
+            <h4 class=&quot;text-sm font-semibold text-gray-600 mb-3&quot;>Resources</h4>
+            <ul class=&quot;space-y-2&quot;>
+              <li>
+                <span class=&quot;flex items-center text-gray-700 hover:text-indigo-600 text-sm p-2 rounded-md transition cursor-pointer&quot;>
+                  <i class=&quot;fa-brands fa-discord w-5&quot;></i>
+                  <span>Discord Community</span>
+                </span>
+              </li>
+              <li>
+                <span class=&quot;flex items-center text-gray-700 hover:text-indigo-600 text-sm p-2 rounded-md transition cursor-pointer&quot;>
+                  <i class=&quot;fa-solid fa-bug w-5&quot;></i>
+                  <span>Report Issues</span>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+      
+      <!-- Main Documentation Content -->
+      <main id=&quot;documentation-content&quot; class=&quot;lg:w-3/4&quot;>
+        <section id=&quot;introduction&quot; class=&quot;bg-white rounded-lg shadow-md p-8 mb-8&quot;>
+          <h2 class=&quot;text-2xl font-bold text-gray-800 mb-4&quot;>Introduction</h2>
+          <div class=&quot;prose max-w-none&quot;>
+            <p class=&quot;text-gray-700 mb-4&quot;>This is the official documentation of Plasma Admin. To start off, Plasma Admin is a universal admin script with plugins, and custom commands for certain games.</p>
+            <p class=&quot;text-gray-700 mb-4&quot;>Plasma Admin fully encourages the use and sharing of plugins, making it one of the most extensible admin scripts available for Roblox.</p>
+            
+            <div class=&quot;bg-indigo-50 border-l-4 border-indigo-500 p-4 my-6 rounded&quot;>
+              <p class=&quot;text-indigo-700 font-medium&quot;>Plasma Admin is designed to be user-friendly while providing powerful administration tools for Roblox game creators and moderators.</p>
+            </div>
+            
+            <h3 class=&quot;text-xl font-bold text-gray-800 mt-6 mb-3&quot;>Key Features</h3>
+            <ul class=&quot;space-y-2 mb-6&quot;>
+              <li class=&quot;flex items-start&quot;>
+                <i class=&quot;fa-solid fa-check text-green-500 mt-1 mr-2&quot;></i>
+                <span>Universal compatibility across Roblox games</span>
+              </li>
+              <li class=&quot;flex items-start&quot;>
+                <i class=&quot;fa-solid fa-check text-green-500 mt-1 mr-2&quot;></i>
+                <span>Extendable plugin system</span>
+              </li>
+              <li class=&quot;flex items-start&quot;>
+                <i class=&quot;fa-solid fa-check text-green-500 mt-1 mr-2&quot;></i>
+                <span>Custom commands for specific games</span>
+              </li>
+              <li class=&quot;flex items-start&quot;>
+                <i class=&quot;fa-solid fa-check text-green-500 mt-1 mr-2&quot;></i>
+                <span>Customizable settings and interface</span>
+              </li>
+              <li class=&quot;flex items-start&quot;>
+                <i class=&quot;fa-solid fa-check text-green-500 mt-1 mr-2&quot;></i>
+                <span>Active community for plugin sharing</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        
+        <section id=&quot;plugins&quot; class=&quot;bg-white rounded-lg shadow-md p-8 mb-8&quot;>
+          <h2 class=&quot;text-2xl font-bold text-gray-800 mb-4&quot;>Plugins</h2>
+          <p class=&quot;text-gray-700 mb-6&quot;>You can download or make plugins to extend Plasma Admin's functionality. Plugins are stored in a specific directory within your workspace.</p>
+          
+          <div class=&quot;bg-gray-100 p-4 rounded-lg border border-gray-300 mb-6&quot;>
+            <h4 class=&quot;text-lg font-medium text-gray-800 mb-2&quot;>Plugin Location</h4>
+            <div class=&quot;bg-gray-800 text-white p-3 rounded font-mono text-sm&quot;>
+              workspace > Plasma Admin > plugins
+            </div>
+            <p class=&quot;text-gray-600 mt-2 text-sm&quot;>This is where you'll put the plugins you download or create.</p>
+          </div>
+          
+          <div class=&quot;grid md:grid-cols-2 gap-6 mb-8&quot;>
+            <div class=&quot;border border-gray-200 rounded-lg p-5 hover:shadow-md transition&quot;>
+              <div class=&quot;flex items-center mb-3&quot;>
+                <i class=&quot;fa-solid fa-download text-indigo-500 text-xl mr-3&quot;></i>
+                <h4 class=&quot;text-lg font-medium&quot;>Download Plugins</h4>
+              </div>
+              <p class=&quot;text-gray-600 text-sm&quot;>Browse and download community-created plugins from our Discord server to enhance your admin experience.</p>
+            </div>
+            
+            <div class=&quot;border border-gray-200 rounded-lg p-5 hover:shadow-md transition&quot;>
+              <div class=&quot;flex items-center mb-3&quot;>
+                <i class=&quot;fa-solid fa-code text-indigo-500 text-xl mr-3&quot;></i>
+                <h4 class=&quot;text-lg font-medium&quot;>Create Plugins</h4>
+              </div>
+              <p class=&quot;text-gray-600 text-sm&quot;>Develop your own plugins with our simple API to add custom functionality to Plasma Admin.</p>
+            </div>
+          </div>
+        </section>
+        
+        <section id=&quot;making-plugins&quot; class=&quot;bg-white rounded-lg shadow-md p-8 mb-8&quot;>
+          <h2 class=&quot;text-2xl font-bold text-gray-800 mb-4&quot;>Making A Plugin</h2>
+          
+          <div id=&quot;adding-commands&quot; class=&quot;mb-8&quot;>
+            <h3 class=&quot;text-xl font-bold text-gray-800 mb-3&quot;>Adding Commands</h3>
+            <p class=&quot;text-gray-700 mb-4&quot;>The <code class=&quot;bg-gray-100 text-indigo-600 px-1 py-0.5 rounded&quot;>addcmd</code> function is used to make a command. The arguments are:</p>
+            
+            <ul class=&quot;list-disc pl-6 mb-6 space-y-2&quot;>
+              <li><strong>Name:</strong> The command name (can include aliases separated by |)</li>
+              <li><strong>Description:</strong> What shows up on the command list</li>
+              <li><strong>Function:</strong> The function to execute when the command is called</li>
+              <li><strong>Split Arguments:</strong> Whether to split the arguments or not (boolean)</li>
+            </ul>
+            
+            <p class=&quot;text-gray-700 mb-4&quot;>The <code class=&quot;bg-gray-100 text-indigo-600 px-1 py-0.5 rounded&quot;>getPlayer</code> function returns a list of player instances with users that contain the input string in their display or username. You can also use special keywords like &quot;all&quot;, &quot;others&quot;, &quot;random&quot;, or &quot;me&quot;.</p>
+            
+            <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-6&quot;>
+              <pre class=&quot;text-sm&quot;><code>addcmd(&quot;kill&quot;, &quot;kill (plr)&quot;, function(plr) 
+  local targets = getPlayer(plr) 
+  for _, target in pairs(targets) do 
+    targetChar = target.Character or target.CharacterAdded:Wait() 
+    targetChar:WaitForChild(&quot;Humanoid&quot;).Health = 0 
+  end 
+end, true)</code></pre>
+            </div>
+            
+            <p class=&quot;text-gray-700 mb-2&quot;>In this example, <code class=&quot;bg-gray-100 text-indigo-600 px-1 py-0.5 rounded&quot;>true</code> means the arguments will be split, allowing multiple arguments to be processed separately.</p>
+            
+            <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-6&quot;>
+              <pre class=&quot;text-sm&quot;><code>addcmd(&quot;print&quot;, &quot;print (msg)&quot;, function(msg) 
+  print(msg) 
+end, false)</code></pre>
+            </div>
+            
+            <p class=&quot;text-gray-700 mb-4&quot;>Here, <code class=&quot;bg-gray-100 text-indigo-600 px-1 py-0.5 rounded&quot;>false</code> means the arguments will stay as one string instead of splitting up.</p>
+            
+            <div class=&quot;bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded&quot;>
+              <div class=&quot;flex&quot;>
+                <div class=&quot;flex-shrink-0&quot;>
+                  <i class=&quot;fa-solid fa-lightbulb text-yellow-400&quot;></i>
+                </div>
+                <div class=&quot;ml-3&quot;>
+                  <h3 class=&quot;text-sm font-medium text-yellow-800&quot;>Tip: Command Aliases</h3>
+                  <div class=&quot;text-sm text-yellow-700&quot;>
+                    <p>The &quot;|&quot; symbol can be used to separate different aliases for the command.</p>
+                    <p class=&quot;mt-1 font-mono text-xs&quot;>addcmd(&quot;kill|ckill|krill&quot;, &quot;kill (plr)&quot;, function()...)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id=&quot;notifications&quot; class=&quot;mb-8&quot;>
+            <h3 class=&quot;text-xl font-bold text-gray-800 mb-3&quot;>Creating Notifications</h3>
+            <p class=&quot;text-gray-700 mb-4&quot;>The <code class=&quot;bg-gray-100 text-indigo-600 px-1 py-0.5 rounded&quot;>createnotification</code> function is used to make notifications for your plugins:</p>
+            
+            <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-4&quot;>
+              <pre class=&quot;text-sm&quot;><code>createnotification(&quot;Admin&quot;, &quot;This Is A Notification&quot;, 5)</code></pre>
+            </div>
+            
+            <p class=&quot;text-gray-700&quot;>This creates a notification that says &quot;Admin: This Is A Notification&quot; that will display for five seconds.</p>
+          </div>
+          
+          <div id=&quot;posting-plugins&quot;>
+            <h3 class=&quot;text-xl font-bold text-gray-800 mb-3&quot;>Posting Your Plugin</h3>
+            <p class=&quot;text-gray-700 mb-4&quot;>We have a plugins channel in the Discord server where you can share your creations with the community.</p>
+            
+            <div class=&quot;bg-red-50 border-l-4 border-red-500 p-4 rounded&quot;>
+              <div class=&quot;flex&quot;>
+                <div class=&quot;flex-shrink-0&quot;>
+                  <i class=&quot;fa-solid fa-triangle-exclamation text-red-500&quot;></i>
+                </div>
+                <div class=&quot;ml-3&quot;>
+                  <h3 class=&quot;text-sm font-medium text-red-800&quot;>Important</h3>
+                  <div class=&quot;text-sm text-red-700&quot;>
+                    <p>To ensure safety, all plugins MUST be unobfuscated when posted to our community.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section id=&quot;commands&quot; class=&quot;bg-white rounded-lg shadow-md p-8 mb-8&quot;>
+          <h2 class=&quot;text-2xl font-bold text-gray-800 mb-4&quot;>Running Commands</h2>
+          <p class=&quot;text-gray-700 mb-4&quot;>The <code class=&quot;bg-gray-100 text-indigo-600 px-1 py-0.5 rounded&quot;>runcommand</code> function can be used to run commands programmatically in Plasma Admin:</p>
+          
+          <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-6&quot;>
+            <pre class=&quot;text-sm&quot;><code>runcommand(&quot;re&quot;, {})</code></pre>
+          </div>
+          
+          <p class=&quot;text-gray-700 mb-6&quot;>The table passed is the arguments of the command, while the string is the command to run.</p>
+          
+          <div class=&quot;bg-indigo-50 border border-indigo-200 rounded-lg p-6&quot;>
+            <h3 class=&quot;text-lg font-semibold text-indigo-800 mb-3&quot;>Command Examples</h3>
+            <div class=&quot;grid grid-cols-1 md:grid-cols-2 gap-4&quot;>
+              <div class=&quot;bg-white rounded p-3 shadow-sm border border-indigo-100&quot;>
+                <code class=&quot;text-sm&quot;>runcommand(&quot;kill&quot;, {&quot;all&quot;})</code>
+                <p class=&quot;text-xs text-gray-600 mt-1&quot;>Kills all players in the game</p>
+              </div>
+              <div class=&quot;bg-white rounded p-3 shadow-sm border border-indigo-100&quot;>
+                <code class=&quot;text-sm&quot;>runcommand(&quot;speed&quot;, {&quot;me&quot;, &quot;50&quot;})</code>
+                <p class=&quot;text-xs text-gray-600 mt-1&quot;>Sets your character's speed to 50</p>
+              </div>
+              <div class=&quot;bg-white rounded p-3 shadow-sm border border-indigo-100&quot;>
+                <code class=&quot;text-sm&quot;>runcommand(&quot;tp&quot;, {&quot;me&quot;, &quot;player2&quot;})</code>
+                <p class=&quot;text-xs text-gray-600 mt-1&quot;>Teleports you to player2</p>
+              </div>
+              <div class=&quot;bg-white rounded p-3 shadow-sm border border-indigo-100&quot;>
+                <code class=&quot;text-sm&quot;>runcommand(&quot;print&quot;, {&quot;Hello World&quot;})</code>
+                <p class=&quot;text-xs text-gray-600 mt-1&quot;>Prints &quot;Hello World&quot; to the console</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section id=&quot;settings&quot; class=&quot;bg-white rounded-lg shadow-md p-8 mb-8&quot;>
+          <h2 class=&quot;text-2xl font-bold text-gray-800 mb-4&quot;>Settings</h2>
+          
+          <div class=&quot;mb-6&quot;>
+            <h3 class=&quot;text-xl font-bold text-gray-800 mb-3&quot;>What is the &quot;Plasma.Settings&quot; file?</h3>
+            <p class=&quot;text-gray-700 mb-4&quot;>The file &quot;Plasma.Settings&quot; holds the settings for Plasma, including:</p>
+            <ul class=&quot;list-disc pl-6 mb-4 space-y-1&quot;>
+              <li>GUI colors</li>
+              <li>Commands to autorun</li>
+              <li>FOV settings</li>
+              <li>And more customization options</li>
+            </ul>
+            <p class=&quot;text-gray-700&quot;>You can share these files among friends or with the server to share your settings with them.</p>
+          </div>
+          
+          <div class=&quot;mb-8&quot;>
+            <h3 class=&quot;text-xl font-bold text-gray-800 mb-3&quot;>How to change settings?</h3>
+            
+            <div class=&quot;mb-6&quot;>
+              <h4 class=&quot;text-lg font-semibold text-gray-800 mb-2&quot;>Manually</h4>
+              <p class=&quot;text-gray-700 mb-2&quot;>You can open the &quot;Plasma.Settings&quot; file with notepad or any text editor and manually change the settings from there.</p>
+              <div class=&quot;bg-gray-100 p-3 rounded-lg border border-gray-200&quot;>
+                <p class=&quot;text-sm text-gray-700&quot;><i class=&quot;fa-solid fa-file-lines text-gray-500 mr-2&quot;></i>Edit the Plasma.Settings file directly with your preferred text editor</p>
+              </div>
+            </div>
+            
+            <div>
+              <h4 class=&quot;text-lg font-semibold text-gray-800 mb-2&quot;>Via Script</h4>
+              <p class=&quot;text-gray-700 mb-4&quot;>You can also edit the file via a script. After the loadstring, you can modify settings programmatically:</p>
+              
+              <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-4&quot;>
+                <pre class=&quot;text-sm&quot;><code>plasmaadmin['settings']['setting'] = value
+update_settings()</code></pre>
+              </div>
+              
+              <p class=&quot;text-gray-700 mb-2&quot;>For example:</p>
+              
+              <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-4&quot;>
+                <pre class=&quot;text-sm&quot;><code>plasmaadmin['settings']['skip_loadscreen'] = true
+update_settings()</code></pre>
+              </div>
+            </div>
+          </div>
+          
+          <div class=&quot;mb-8&quot;>
+            <h3 class=&quot;text-xl font-bold text-gray-800 mb-3&quot;>Using settings in a plugin</h3>
+            <p class=&quot;text-gray-700 mb-4&quot;>If you are a plugin developer, you can store settings within Plasma Admin's settings file using the following functions:</p>
+            
+            <div class=&quot;space-y-6&quot;>
+              <div>
+                <h4 class=&quot;text-lg font-semibold text-gray-800 mb-2&quot;>update_settings function</h4>
+                <p class=&quot;text-gray-700 mb-2&quot;>The <code class=&quot;bg-gray-100 text-indigo-600 px-1 py-0.5 rounded&quot;>update_settings</code> function saves the current settings to the &quot;Plasma.Settings&quot; file.</p>
+                
+                <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto&quot;>
+                  <pre class=&quot;text-sm&quot;><code>-- After changing a setting
+update_settings()</code></pre>
+                </div>
+              </div>
+              
+              <div>
+                <h4 class=&quot;text-lg font-semibold text-gray-800 mb-2&quot;>set_settings_table function</h4>
+                <p class=&quot;text-gray-700 mb-2&quot;>To add tables for RGB or any other settings, you can use:</p>
+                
+                <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-2&quot;>
+                  <pre class=&quot;text-sm&quot;><code>set_settings_table(&quot;table&quot;, values)</code></pre>
+                </div>
+                
+                <p class=&quot;text-gray-700 mb-2&quot;>For example:</p>
+                
+                <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto&quot;>
+                  <pre class=&quot;text-sm&quot;><code>set_settings_table('cmdbar_color', 0, 0, 0)</code></pre>
+                </div>
+                
+                <p class=&quot;text-gray-700 mt-2&quot;>This would set the cmdbar_color value to {0, 0, 0}</p>
+              </div>
+              
+              <div>
+                <h4 class=&quot;text-lg font-semibold text-gray-800 mb-2&quot;>delitem_settings_table function</h4>
+                <p class=&quot;text-gray-700 mb-2&quot;>The <code class=&quot;bg-gray-100 text-indigo-600 px-1 py-0.5 rounded&quot;>delitem_settings_table</code> function deletes a value from a table.</p>
+                
+                <p class=&quot;text-gray-700 mb-2&quot;>For example, if you have a setting called &quot;test_table&quot; that looks like this:</p>
+                
+                <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-4&quot;>
+                  <pre class=&quot;text-sm&quot;><code>['test_table'] = {
+    ['bleh'] = &quot;value&quot;,
+    ['blez'] = &quot;value&quot;
+}</code></pre>
+                </div>
+                
+                <p class=&quot;text-gray-700 mb-2&quot;>You could do:</p>
+                
+                <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-2&quot;>
+                  <pre class=&quot;text-sm&quot;><code>delitem_settings_table('test_table', 'bleh')</code></pre>
+                </div>
+                
+                <p class=&quot;text-gray-700 mb-2&quot;>And it would turn the table into this:</p>
+                
+                <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto&quot;>
+                  <pre class=&quot;text-sm&quot;><code>['test_table'] = {
+    ['blez'] = &quot;value&quot;
+}</code></pre>
+                </div>
+              </div>
+              
+              <div>
+                <h4 class=&quot;text-lg font-semibold text-gray-800 mb-2&quot;>get_settings_table function</h4>
+                <p class=&quot;text-gray-700 mb-2&quot;>The <code class=&quot;bg-gray-100 text-indigo-600 px-1 py-0.5 rounded&quot;>get_settings_table</code> function can be used to get a Color3 or Vector3 from a table.</p>
+                
+                <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-2&quot;>
+                  <pre class=&quot;text-sm&quot;><code>get_settings_table('cmdbar_color', &quot;color3&quot;) -- color3 could also be vector3</code></pre>
+                </div>
+                
+                <p class=&quot;text-gray-700&quot;>This would return Color3.fromRGB of the table cmdbar_color</p>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class=&quot;text-xl font-bold text-gray-800 mb-3&quot;>Adding settings</h3>
+            
+            <div class=&quot;mb-4&quot;>
+              <h4 class=&quot;text-lg font-semibold text-gray-800 mb-2&quot;>Adding a setting manually</h4>
+              <p class=&quot;text-gray-700&quot;>Open the &quot;Plasma.Settings&quot; file and add to it directly.</p>
+            </div>
+            
+            <div>
+              <h4 class=&quot;text-lg font-semibold text-gray-800 mb-2&quot;>Via script</h4>
+              <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto mb-4&quot;>
+                <pre class=&quot;text-sm&quot;><code>plasmaadmin['settings']['setting'] = value
+update_settings()</code></pre>
+              </div>
+              
+              <p class=&quot;text-gray-700 mb-2&quot;>For example:</p>
+              
+              <div class=&quot;bg-gray-800 text-white p-4 rounded-lg overflow-x-auto&quot;>
+                <pre class=&quot;text-sm&quot;><code>plasmaadmin['settings']['speed'] = 7546456453243436578
+update_settings()</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section id=&quot;sharing&quot; class=&quot;bg-white rounded-lg shadow-md p-8&quot;>
+          <h2 class=&quot;text-2xl font-bold text-gray-800 mb-4&quot;>Sharing Your Work</h2>
+          
+          <div class=&quot;grid md:grid-cols-2 gap-6 mb-8&quot;>
+            <div class=&quot;border border-gray-200 rounded-lg p-5 hover:shadow-md transition&quot;>
+              <div class=&quot;flex items-center mb-3&quot;>
+                <i class=&quot;fa-solid fa-share-nodes text-indigo-500 text-xl mr-3&quot;></i>
+                <h4 class=&quot;text-lg font-medium&quot;>Share Plugins</h4>
+              </div>
+              <p class=&quot;text-gray-600 text-sm&quot;>Share your plugins with the community through our Discord server's plugins channel.</p>
+              <span class=&quot;inline-block mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium cursor-pointer&quot;>Join Discord <i class=&quot;fa-solid fa-arrow-right ml-1&quot;></i></span>
+            </div>
+            
+            <div class=&quot;border border-gray-200 rounded-lg p-5 hover:shadow-md transition&quot;>
+              <div class=&quot;flex items-center mb-3&quot;>
+                <i class=&quot;fa-solid fa-gear text-indigo-500 text-xl mr-3&quot;></i>
+                <h4 class=&quot;text-lg font-medium&quot;>Share Settings</h4>
+              </div>
+              <p class=&quot;text-gray-600 text-sm&quot;>Export your Plasma.Settings file to share your customized setup with friends.</p>
+              <span class=&quot;inline-block mt-3 text-indigo-600 hover:text-indigo-800 text-sm font-medium cursor-pointer&quot;>Learn how <i class=&quot;fa-solid fa-arrow-right ml-1&quot;></i></span>
+            </div>
+          </div>
+          
+          <div class=&quot;bg-indigo-50 rounded-lg p-6 border border-indigo-100&quot;>
+            <div class=&quot;flex items-start&quot;>
+              <div class=&quot;flex-shrink-0 mt-1&quot;>
+                <i class=&quot;fa-solid fa-lightbulb text-indigo-500 text-xl&quot;></i>
+              </div>
+              <div class=&quot;ml-4&quot;>
+                <h3 class=&quot;text-lg font-semibold text-indigo-800 mb-2&quot;>Community Guidelines</h3>
+                <p class=&quot;text-indigo-700 mb-4&quot;>When sharing plugins or settings with the Plasma Admin community, please follow these guidelines:</p>
+                <ul class=&quot;space-y-2 text-indigo-700&quot;>
+                  <li class=&quot;flex items-start&quot;>
+                    <i class=&quot;fa-solid fa-check-circle text-green-500 mt-1 mr-2&quot;></i>
+                    <span>Keep all plugins unobfuscated for safety and transparency</span>
+                  </li>
+                  <li class=&quot;flex items-start&quot;>
+                    <i class=&quot;fa-solid fa-check-circle text-green-500 mt-1 mr-2&quot;></i>
+                    <span>Provide clear documentation of what your plugin does</span>
+                  </li>
+                  <li class=&quot;flex items-start&quot;>
+                    <i class=&quot;fa-solid fa-check-circle text-green-500 mt-1 mr-2&quot;></i>
+                    <span>Credit other developers if you've built upon their work</span>
+                  </li>
+                  <li class=&quot;flex items-start&quot;>
+                    <i class=&quot;fa-solid fa-check-circle text-green-500 mt-1 mr-2&quot;></i>
+                    <span>Test your plugins thoroughly before sharing</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+    
+          </div>
+      </div>
+    </div>
+  </footer>
+</div>
+              </body>
+            </html>
+          "></iframe></div>
